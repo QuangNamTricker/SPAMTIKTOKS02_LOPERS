@@ -1,175 +1,108 @@
-/*WEBSITE ĐANG ĐƯỢC NÂNG CẤP*/
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Universe</title>
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-            background: #000;
-            color: #fff;
-            font-family: 'Courier New', monospace;
-        }
-        #universe {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        .error-message {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            z-index: 100;
-            opacity: 0.7;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nội Quy - SPAM TIK TOK</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+
+  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <canvas id="universe"></canvas>
-    <div class="error-message">/*WEBSITE ĐANG ĐƯỢC NÂNG CẤP*/
-        <h1>404</h1>
-        <p>Page not found. But you've discovered planet #<span id="planet-count">0</span></p>
+
+<header class="main-header">
+  <div class="header-container">
+    <div class="logo">
+      <i class="fas fa-rocket"></i>
+      <span>SPAM TIK TOK</span>
     </div>
+    
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+    
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html"><i class="fas fa-home"></i> Trang Chủ</a>
+      <a href="noi-quy.html"><i class="fas fa-scroll"></i> Nội Quy</a>
+      <a href="bang-luong.html"><i class="fas fa-money-bill-wave"></i> Bảng Lương</a>
+      <a href="huong-dan.html"><i class="fas fa-book"></i> Hướng Dẫn</a>
+      <a href="thong-ke.html"><i class="fas fa-chart-pie"></i> Thống Kê</a>
+    </nav>
+  </div>
+</header>
 
-    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
-    <script src="main.js"></script>
-    <script>
-        // Khởi tạo Three.js scene
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('universe') });
-renderer.setSize(window.innerWidth, window.innerHeight);
+<div class="rules-container">
+  <div class="rules-header">
+    <h1><i class="fas fa-gavel"></i> NỘI QUY CỘNG ĐỒNG</h1>
+    <p>Phiên bản cập nhật ngày 02/06/2025</p>
+  </div>
+  
+  <div class="important-note">
+    <h3><i class="fas fa-exclamation-triangle"></i> LƯU Ý QUAN TRỌNG</h3>
+    <p>Mọi thành viên vi phạm nội quy sẽ bị xử lý nghiêm minh, bao gồm cả khóa tài khoản vĩnh viễn và không được nhận lương.</p>
+  </div>
+  
+  <div class="rule-category">
+    <h2 onclick="toggleCategory(this)"><i class="fas fa-users"></i> QUY ĐỊNH CHUNG</h2>
+    <div class="rule-list">
+      <li>Không chia sẻ thông tin nhóm ra bên ngoài</li>
+      <li>Không sử dụng nhiều tài khoản để gian lận</li>
+      <li>Bắt buộc đọc kỹ hướng dẫn trước khi làm việc</li>
+      <div class="penalty">
+        <strong>Mức phạt:</strong> Cảnh cáo lần 1, lần 2 khóa tài khoản 3 ngày, lần 3 ban vĩnh viễn
+      </div>
+    </div>
+  </div>
+  
+  <div class="rule-category">
+    <h2 onclick="toggleCategory(this)"><i class="fas fa-stopwatch"></i> QUY ĐỊNH LÀM VIỆC</h2>
+    <div class="rule-list">
+      <li>Tối thiểu 50 bài/ngày để được tính lương</li>
+      <li>Không spam quá 10 bài/giờ để tránh bị khóa tài khoản TikTok</li>
+      <li>Báo cáo công việc trước 23h hàng ngày</li>
+      <li>Chỉ sử dụng nội dung đã được duyệt</li>
+    </div>
+  </div>
+  
+  <div class="rule-category">
+    <h2 onclick="toggleCategory(this)"><i class="fas fa-coins"></i> QUY ĐỊNH TÍNH LƯƠNG</h2>
+    <div class="rule-list">
+      <li>Lương được tính theo số lượng bài hợp lệ</li>
+      <li>Thanh toán vào 9h và 21h hàng ngày qua Momo/Bank</li>
+      <li>Không khiếu nại nếu không báo cáo đúng hạn</li>
+      <li>Bài viết bị TikTok xóa sẽ không được tính lương</li>
+    </div>
+  </div>
+  
+  <div class="rule-category">
+    <h2 onclick="toggleCategory(this)"><i class="fas fa-user-secret"></i> BẢO MẬT</h2>
+    <div class="rule-list">
+      <li>Không chia sẻ mật khẩu tài khoản TikTok</li>
+      <li>Sử dụng VPN theo hướng dẫn của nhóm</li>
+      <li>Báo cáo ngay nếu phát hiện lỗ hổng bảo mật</li>
+      <div class="penalty">
+        <strong>Mức phạt:</strong> Khóa tài khoản vĩnh viễn + không thanh toán lương tồn đọng
+      </div>
+    </div>
+  </div>
+</div>
 
-// Lưu trữ các hành tinh
-let planets = [];
-let planetCount = 0;
+<footer>
+  <div>© 2025 𝑺𝑷𝑨𝑴 𝑻𝑰𝑲 𝑻𝑶𝑲 𝑺𝟎𝟐 - 𝑳𝑶𝑷𝑬𝑹𝑺🐣. All rights reserved.</div>
+  <div class="social-links">
+    <a href="#"><i class="fab fa-telegram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+  </div>
+</footer>
 
-// Tạo ngôi sao nền
-function createStarfield() {
-    const starsGeometry = new THREE.BufferGeometry();
-    const starCount = 10000;
-    const positions = new Float32Array(starCount * 3);
-    
-    for (let i = 0; i < starCount; i++) {
-        positions[i * 3] = (Math.random() - 0.5) * 2000;
-        positions[i * 3 + 1] = (Math.random() - 0.5) * 2000;
-        positions[i * 3 + 2] = (Math.random() - 0.5) * 2000;
-    }
-    
-    starsGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    const starsMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 0.5 });
-    const starField = new THREE.Points(starsGeometry, starsMaterial);
-    scene.add(starField);
-}
+<script>
 
-// Tạo hành tinh mới
-function createPlanet() {
-    planetCount++;
-    document.getElementById('planet-count').textContent = planetCount;
-    
-    // Random planet properties
-    const size = Math.random() * 2 + 0.5;
-    const color = new THREE.Color(Math.random(), Math.random(), Math.random());
-    const geometry = new THREE.SphereGeometry(size, 32, 32);
-    const material = new THREE.MeshPhongMaterial({ color, shininess: 100 });
-    const planet = new THREE.Mesh(geometry, material);
-    
-    // Random position
-    planet.position.x = (Math.random() - 0.5) * 50;
-    planet.position.y = (Math.random() - 0.5) * 50;
-    planet.position.z = (Math.random() - 0.5) * 50;
-    
-    // Random rotation speed
-    planet.userData = {
-        rotationSpeed: {
-            x: Math.random() * 0.02,
-            y: Math.random() * 0.02
-        }
-    };
-    
-    // Add atmosphere
-    if (Math.random() > 0.7) {
-        const atmosphereGeometry = new THREE.SphereGeometry(size * 1.2, 32, 32);
-        const atmosphereMaterial = new THREE.MeshPhongMaterial({
-            color: 0x88ccff,
-            transparent: true,
-            opacity: 0.3,
-            shininess: 10
-        });
-        const atmosphere = new THREE.Mesh(atmosphereGeometry, atmosphereMaterial);
-        planet.add(atmosphere);
-    }
-    
-    scene.add(planet);
-    planets.push(planet);
-    return planet;
-}
-
-// Tạo ánh sáng
-function createLights() {
-    const ambientLight = new THREE.AmbientLight(0x333333);
-    scene.add(ambientLight);
-    
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-    directionalLight.position.set(1, 1, 1);
-    scene.add(directionalLight);
-}
-
-// Khởi tạo
-function init() {
-    createStarfield();
-    createLights();
-    camera.position.z = 30;
-    
-    // Tạo hành tinh đầu tiên
-    createPlanet();
-    
-    // Controls
-    const controls = new THREE.OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true;
-    controls.dampingFactor = 0.05;
-    
-    // Xử lý resize
-    window.addEventListener('resize', () => {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-    });
-    
-    // Animation loop
-    function animate() {
-        requestAnimationFrame(animate);
-        
-        // Xoay các hành tinh
-        planets.forEach(planet => {
-            planet.rotation.x += planet.userData.rotationSpeed.x;
-            planet.rotation.y += planet.userData.rotationSpeed.y;
-        });
-        
-        controls.update();
-        renderer.render(scene, camera);
-    }
-    
-    animate();
-    
-    // Tự động thêm hành tinh mới
-    setInterval(() => {
-        if (planets.length < 20) { // Giới hạn số hành tinh
-            createPlanet();
-        }
-    }, 3000);
-}
-
-// Khởi chạy
-init();
-    </script>
-    <script src="script.js"></script>
+</script>
+<script src="script.js"></script>
 </body>
 </html>
