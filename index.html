@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang Chủ - SPAM TIK TOK</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: #fff;
+    }
+    
+    .main-header {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .logo {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #00ffff;
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo i {
+      margin-right: 10px;
+    }
+    
+    .main-nav {
+      display: flex;
+    }
+    
+    .main-nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 20px 15px;
+      transition: all 0.3s ease;
+      position: relative;
+      font-weight: 500;
+    }
+    
+    .main-nav a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #00ffcc;
+    }
+    
+    .main-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 3px;
+      background: #00ffcc;
+      transition: all 0.3s ease;
+    }
+    
+    .main-nav a:hover::after {
+      width: 100%;
+      left: 0;
+    }
+    
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+    
+    .hero {
+      background: url('https://images.unsplash.com/photo-1636953056323-9c09fdd74fa6?fit=crop&w=1500&q=80') center/cover;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    
+    .hero-content {
+      z-index: 1;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+    
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #00ffcc;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #00ffcc;
+      color: #000;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      border: 2px solid #00ffcc;
+    }
+    
+    .btn:hover {
+      background: transparent;
+      color: #00ffcc;
+    }
+    
+    .features {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 50px auto;
+      gap: 30px;
+    }
+    
+    .feature-card {
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 15px;
+      padding: 30px;
+      width: 300px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .feature-icon {
+      font-size: 3rem;
+      color: #00ffcc;
+      margin-bottom: 20px;
+    }
+    
+    .feature-card h3 {
+      color: #00ffcc;
+      margin-bottom: 15px;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: linear-gradient(to right, #0f2027, #203a43);
+      color: #aaa;
+      margin-top: 50px;
+    }
+    
+    .social-links {
+      margin-top: 20px;
+    }
+    
+    .social-links a {
+      color: #aaa;
+      margin: 0 10px;
+      font-size: 1.5em;
+      transition: color 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      color: #00ffcc;
+    }
+    
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        padding: 10px;
+      }
+      
+      .main-nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+      }
+      
+      .main-nav.active {
+        display: flex;
+      }
+      
+      .main-nav a {
+        padding: 12px;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+      
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="main-header">
+  <div class="header-container">
+    <div class="logo">
+      <i class="fas fa-rocket"></i>
+      <span>SPAM TIK TOK</span>
+    </div>
+    
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+    
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html"><i class="fas fa-home"></i> Trang Chủ</a>
+      <a href="#"><i class="fas fa-scroll"></i> Nội Quy</a>
+      <a href="bang-luong.html"><i class="fas fa-money-bill-wave"></i> Bảng Lương</a>
+      <a href="huong-dan.html"><i class="fas fa-book"></i> Hướng Dẫn</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Chào Mừng Đến Với SPAM TIK TOK</h1>
+    <p>Cộng đồng kiếm tiền online uy tín và hiệu quả nhất hiện nay</p>
+    <a href="huong-dan.html" class="btn">Bắt Đầu Ngay</a>
+  </div>
+</section>
+
+<div class="features">
+  <div class="feature-card">
+    <div class="feature-icon">
+      <i class="fas fa-chart-line"></i>
+    </div>
+    <h3>Thu Nhập Cao</h3>
+    <p>Hệ thống tính lương minh bạch, thu nhập lên đến 10 triệu đồng mỗi tuần</p>
+  </div>
+  
+  <div class="feature-card">
+    <div class="feature-icon">
+      <i class="fas fa-users"></i>
+    </div>
+    <h3>Cộng Đồng Mạnh</h3>
+    <p>Hơn 50,000 thành viên tích cực hỗ trợ lẫn nhau</p>
+  </div>
+  
+  <div class="feature-card">
+    <div class="feature-icon">
+      <i class="fas fa-shield-alt"></i>
+    </div>
+    <h3>An Toàn Tuyệt Đối</h3>
+    <p>Phương pháp làm việc an toàn, không lo bị khóa tài khoản</p>
+  </div>
+</div>
+
+<footer>
+  <div>© 2025 𝑺𝑷𝑨𝑴 𝑻𝑰𝑲 𝑻𝑶𝑲 𝑺𝟎𝟐 - 𝑳𝑶𝑷𝑬𝑹𝑺🐣. All rights reserved.</div>
+  <div class="social-links">
+    <a href="#"><i class="fab fa-telegram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mainNav = document.getElementById('mainNav');
+  
+  mobileMenuBtn.addEventListener('click', () => {
+    mainNav.classList.toggle('active');
+  });
+</script>
+
+</body>
+</html>
