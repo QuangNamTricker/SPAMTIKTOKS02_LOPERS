@@ -1,0 +1,13 @@
+{
+  "02/06/2025": [
+    { "name": "Từ Quang Nam", "quantity": 100, "unitPrice": 2000, "status": "Đã thanh toán" },
+    { "name": "Nguyễn Quỳnh Nhi", "quantity": 120, "unitPrice": 2000, "status": "Đã thanh toán" },
+    { "name": "Trần Thị B", "quantity": 150, "unitPrice": 2000, "status": "Chờ xử lý" }
+
+  ],
+  "01/06/2025": [
+    { "name": "Từ Quang Nam", "quantity": 150, "unitPrice": 2000, "status": "Đã thanh toán" },
+    { "name": "Trần Thị B", "quantity": 200, "unitPrice": 2000, "status": "Đã thanh toán" },
+    { "name": "Lê Văn C", "quantity": 180, "unitPrice": 2000, "status": "Chờ xử lý" }
+  ]
+}
