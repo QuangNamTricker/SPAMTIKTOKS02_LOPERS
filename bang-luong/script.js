@@ -36,7 +36,7 @@
 
   async function fetchSalaryData() {
     try {
-      const res = await fetch('data.json');
+      const res = await fetch('../data/data.json');
       salaryData = await res.json();
       const defaultDate = dateSelect.value;
       renderSalaryTable(salaryData[defaultDate] || []);
