@@ -1,0 +1,325 @@
+  <!DOCTYPE html>
+  <html lang="vi">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng Dẫn Dùng 1.1.1.1 Vào Telegram - SPAM TIK TOK</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        background: linear-gradient(to right, #141e30, #243b55);
+        color: #fff;
+      }
+      
+      .main-header {
+        background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+        padding: 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+      
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      
+      .logo {
+        font-size: 1.8em;
+        font-weight: bold;
+        color: #00ffff;
+        display: flex;
+        align-items: center;
+      }
+      
+      .logo i {
+        margin-right: 10px;
+      }
+      
+      .main-nav {
+        display: flex;
+      }
+      
+      .main-nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 20px 15px;
+        transition: all 0.3s ease;
+        position: relative;
+        font-weight: 500;
+      }
+      
+      .main-nav a:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: #00ffcc;
+      }
+      
+      .main-nav a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 3px;
+        background: #00ffcc;
+        transition: all 0.3s ease;
+      }
+      
+      .main-nav a:hover::after {
+        width: 100%;
+        left: 0;
+      }
+      
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5em;
+        cursor: pointer;
+      }
+      
+      .banner {
+        background: url('https://images.unsplash.com/photo-1602524205899-f9f2601236b1?fit=crop&w=1500&q=80') center/cover;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-shadow: 2px 2px 5px black;
+        animation: fadeIn 2s ease;
+        position: relative;
+      }
+      
+      .banner::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+      }
+      
+      .banner h2 {
+        font-size: 2.5rem;
+        z-index: 1;
+        text-align: center;
+        padding: 0 20px;
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      
+      .content {
+        max-width: 800px;
+        margin: 40px auto;
+        background: rgba(0,0,0,0.4);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        animation: floatUp 1s ease-out;
+        backdrop-filter: blur(10px);
+      }
+      
+      @keyframes floatUp {
+        from { transform: translateY(50px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+      
+      h2 {
+        color: #00ffcc;
+        border-bottom: 2px solid #00ffcc;
+        padding-bottom: 10px;
+        margin-top: 30px;
+      }
+      
+      ol {
+        padding-left: 20px;
+      }
+      
+      li {
+        margin-bottom: 15px;
+        line-height: 1.6;
+        position: relative;
+        padding-left: 30px;
+      }
+      
+      li::before {
+        content: '→';
+        color: #00ffcc;
+        position: absolute;
+        left: 0;
+      }
+      
+      .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        margin: 30px 0;
+        border-radius: 10px;
+      }
+      
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      
+      footer {
+        text-align: center;
+        padding: 30px;
+        background: linear-gradient(to right, #0f2027, #203a43);
+        color: #aaa;
+        margin-top: 50px;
+      }
+      
+      .social-links {
+        margin-top: 20px;
+      }
+      
+      .social-links a {
+        color: #aaa;
+        margin: 0 10px;
+        font-size: 1.5em;
+        transition: color 0.3s ease;
+      }
+      
+      .social-links a:hover {
+        color: #00ffcc;
+      }
+      
+      @media (max-width: 768px) {
+        .header-container {
+          flex-direction: column;
+          padding: 10px;
+        }
+        
+        .main-nav {
+          display: none;
+          width: 100%;
+          flex-direction: column;
+        }
+        
+        .main-nav.active {
+          display: flex;
+        }
+        
+        .main-nav a {
+          padding: 12px;
+          text-align: center;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .mobile-menu-btn {
+          display: block;
+          position: absolute;
+          top: 15px;
+          right: 20px;
+        }
+        
+        .banner h2 {
+          font-size: 1.8rem;
+        }
+        
+        .content {
+          margin: 20px;
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo">
+        <i class="fas fa-rocket"></i>
+        <span>SPAM TIK TOK</span>
+      </div>
+      
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html"><i class="fas fa-home"></i> Trang Chủ</a>
+        <a href="#"><i class="fas fa-scroll"></i> Nội Quy</a>
+        <a href="bang-luong.html"><i class="fas fa-money-bill-wave"></i> Bảng Lương</a>
+        <a href="huong-dan.html"><i class="fas fa-book"></i> Hướng Dẫn</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="banner">
+    <h2>Hướng Dẫn Sử Dụng 1.1.1.1 Để Truy Cập Telegram</h2>
+  </div>
+
+  <div class="content">
+    <h2>Bước 1: Tải ứng dụng 1.1.1.1</h2>
+    <ol>
+      <li>Truy cập App Store (iOS) hoặc CH Play (Android).</li>
+      <li>Tìm kiếm "1.1.1.1".</li>
+      <li>Tải và cài đặt ứng dụng vào điện thoại của bạn.</li>
+    </ol>
+
+    <h2>Bước 2: Cấu hình ứng dụng</h2>
+    <ol>
+      <li>Mở ứng dụng 1.1.1.1 sau khi cài đặt.</li>
+      <li>Chọn "Get Started" (Bắt đầu).</li>
+      <li>Chọn chế độ "1.1.1.1 with WARP" để có tốc độ và bảo mật tốt nhất.</li>
+      <li>Nhấn nút bật để kích hoạt VPN.</li>
+    </ol>
+
+    <h2>Bước 3: Mở Telegram và sử dụng bình thường</h2>
+    <ol>
+      <li>Sau khi bật WARP, Telegram sẽ vượt qua chặn mạng.</li>
+      <li>Mở Telegram như bình thường và trải nghiệm không giới hạn.</li>
+    </ol>
+
+    <div class="video-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <h2>Mẹo thêm:</h2>
+    <ul style="list-style-type: none; padding-left: 0;">
+      <li><i class="fas fa-lightbulb" style="color: #00ffcc; margin-right: 10px;"></i> Bạn có thể bật tự động kết nối trong phần cài đặt của 1.1.1.1.</li>
+      <li><i class="fas fa-lightbulb" style="color: #00ffcc; margin-right: 10px;"></i> Nếu thấy lag, thử chuyển sang Wi-Fi hoặc bật lại VPN.</li>
+      <li><i class="fas fa-lightbulb" style="color: #00ffcc; margin-right: 10px;"></i> Luôn cập nhật ứng dụng lên phiên bản mới nhất.</li>
+    </ul>
+  </div>
+
+  <footer>
+    <div>© 2025 𝑺𝑷𝑨𝑴 𝑻𝑰𝑲 𝑻𝑶𝑲 𝑺𝟎𝟐 - 𝑳𝑶𝑷𝑬𝑹𝑺🐣. All rights reserved.</div>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-telegram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mainNav = document.getElementById('mainNav');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mainNav.classList.toggle('active');
+    });
+  </script>
+
+  </body>
+  </html>
