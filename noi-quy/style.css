@@ -4,7 +4,6 @@
 
 
 
-
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
@@ -236,5 +235,120 @@
       .features {
         flex-direction: column;
         align-items: center;
+      }
+    }
+
+    /* Phần CSS chung giữ nguyên từ các trang trước */
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: #fff;
+    }
+    
+    .main-header {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* ... (Giữ nguyên phần header và footer giống các trang khác) ... */
+    
+    .rules-container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 15px;
+      padding: 30px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+    
+    .rules-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .rules-header h1 {
+      color: #00ffcc;
+      font-size: 2.5em;
+    }
+    
+    .rule-category {
+      margin-bottom: 30px;
+      border-left: 3px solid #00ffcc;
+      padding-left: 15px;
+    }
+    
+    .rule-category h2 {
+      color: #00ffcc;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .rule-category h2:hover {
+      padding-left: 10px;
+    }
+    
+    .rule-category h2 i {
+      margin-right: 10px;
+    }
+    
+    .rule-list {
+      margin-top: 15px;
+      padding-left: 25px;
+      overflow: hidden;
+      transition: all 0.5s ease;
+    }
+    
+    .rule-list li {
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 25px;
+    }
+    
+    .rule-list li::before {
+      content: '•';
+      color: #00ffcc;
+      font-size: 1.5em;
+      position: absolute;
+      left: 0;
+      top: -5px;
+    }
+    
+    .penalty {
+      background: rgba(255, 0, 0, 0.2);
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 10px;
+      border-left: 3px solid red;
+    }
+    
+    .penalty strong {
+      color: #ff5555;
+    }
+    
+    .important-note {
+      background: rgba(0, 255, 204, 0.2);
+      padding: 20px;
+      border-radius: 10px;
+      margin: 30px 0;
+      text-align: center;
+      border: 1px dashed #00ffcc;
+    }
+    
+    @media (max-width: 768px) {
+      .rules-container {
+        margin: 20px;
+        padding: 20px;
+      }
+      
+      .rules-header h1 {
+        font-size: 1.8em;
       }
     }
