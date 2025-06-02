@@ -54,7 +54,7 @@
   // Hàm tải dữ liệu từ JSON
   async function loadData() {
     try {
-      const response = await fetch('data.json');
+      const response = await fetch('../data/data.json');
       allData = await response.json();
       
       // Cập nhật thời gian cập nhật
