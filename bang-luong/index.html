@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bảng Lương - SPAM TIK TOK</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: #fff;
+    }
+    
+    .main-header {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .logo {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #00ffff;
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo i {
+      margin-right: 10px;
+    }
+    
+    .main-nav {
+      display: flex;
+    }
+    
+    .main-nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 20px 15px;
+      transition: all 0.3s ease;
+      position: relative;
+      font-weight: 500;
+    }
+    
+    .main-nav a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #00ffcc;
+    }
+    
+    .main-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 3px;
+      background: #00ffcc;
+      transition: all 0.3s ease;
+    }
+    
+    .main-nav a:hover::after {
+      width: 100%;
+      left: 0;
+    }
+    
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+    
+    .salary-container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 30px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+    }
+    
+    .salary-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .salary-header h1 {
+      color: #00ffcc;
+      margin-bottom: 10px;
+    }
+    
+    .date-selector {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .date-selector label {
+      font-weight: bold;
+    }
+    
+    .date-selector select {
+      padding: 10px 15px;
+      border-radius: 5px;
+      border: none;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-size: 1em;
+    }
+    
+    .date-selector select:focus {
+      outline: 2px solid #00ffcc;
+    }
+    
+    .salary-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    
+    .salary-table th, .salary-table td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .salary-table th {
+      background-color: rgba(0, 255, 204, 0.2);
+      color: #00ffcc;
+    }
+    
+    .salary-table tr:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+    
+    .highlight {
+      color: #00ffcc;
+      font-weight: bold;
+    }
+    
+    .summary {
+      margin-top: 30px;
+      padding: 20px;
+      background: rgba(0, 255, 204, 0.1);
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    
+    .summary-item {
+      margin: 10px;
+    }
+    
+    .summary-item span {
+      font-weight: bold;
+      color: #00ffcc;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: linear-gradient(to right, #0f2027, #203a43);
+      color: #aaa;
+      margin-top: 50px;
+    }
+    
+    .social-links {
+      margin-top: 20px;
+    }
+    
+    .social-links a {
+      color: #aaa;
+      margin: 0 10px;
+      font-size: 1.5em;
+      transition: color 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      color: #00ffcc;
+    }
+    
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        padding: 10px;
+      }
+      
+      .main-nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+      }
+      
+      .main-nav.active {
+        display: flex;
+      }
+      
+      .main-nav a {
+        padding: 12px;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+      }
+      
+      .salary-container {
+        margin: 20px;
+        padding: 20px;
+      }
+      
+      .date-selector {
+        flex-direction: column;
+      }
+      
+      .summary {
+        flex-direction: column;
+      }
+      
+      .salary-table {
+        font-size: 0.9em;
+      }
+      
+      .salary-table th, .salary-table td {
+        padding: 10px 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="main-header">
+  <div class="header-container">
+    <div class="logo">
+      <i class="fas fa-rocket"></i>
+      <span>SPAM TIK TOK</span>
+    </div>
+    
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+    
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html"><i class="fas fa-home"></i> Trang Chủ</a>
+      <a href="#"><i class="fas fa-scroll"></i> Nội Quy</a>
+      <a href="bang-luong.html"><i class="fas fa-money-bill-wave"></i> Bảng Lương</a>
+      <a href="huong-dan.html"><i class="fas fa-book"></i> Hướng Dẫn</a>
+    </nav>
+  </div>
+</header>
+
+<div class="salary-container">
+  <div class="salary-header">
+    <h1><i class="fas fa-money-bill-wave"></i> Bảng Lương Thành Viên</h1>
+    <p>Xem chi tiết thu nhập của bạn theo từng ngày</p>
+  </div>
+  
+  <div class="date-selector">
+    <label for="date-select">Chọn ngày:</label>
+    <select id="date-select">
+      <option value="today">Hôm nay - 02/06/2025</option>
+      <option value="yesterday">Hôm qua - 01/06/2025</option>
+      <option value="week">Tuần này</option>
+      <option value="month">Tháng này</option>
+      <option value="custom">Tùy chọn...</option>
+    </select>
+  </div>
+  
+  <table class="salary-table">
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>Tên Thành Viên</th>
+        <th>Số Lượng</th>
+        <th>Đơn Giá</th>
+        <th>Thành Tiền</th>
+        <th>Trạng Thái</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Nguyễn Văn A</td>
+        <td>150</td>
+        <td>2,000đ</td>
+        <td class="highlight">300,000đ</td>
+        <td><span style="color: #00ffcc;">Đã thanh toán</span></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Trần Thị B</td>
+        <td>200</td>
+        <td>2,000đ</td>
+        <td class="highlight">400,000đ</td>
+        <td><span style="color: #00ffcc;">Đã thanh toán</span></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Lê Văn C</td>
+        <td>180</td>
+        <td>2,000đ</td>
+        <td class="highlight">360,000đ</td>
+        <td><span style="color: #ffff00;">Chờ xử lý</span></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Phạm Thị D</td>
+        <td>250</td>
+        <td>2,000đ</td>
+        <td class="highlight">500,000đ</td>
+        <td><span style="color: #00ffcc;">Đã thanh toán</span></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Hoàng Văn E</td>
+        <td>120</td>
+        <td>2,000đ</td>
+        <td class="highlight">240,000đ</td>
+        <td><span style="color: #ff0000;">Hủy bỏ</span></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div class="summary">
+    <div class="summary-item">
+      Tổng số lượng: <span>900</span>
+    </div>
+    <div class="summary-item">
+      Tổng thành tiền: <span>1,800,000đ</span>
+    </div>
+    <div class="summary-item">
+      Đã thanh toán: <span>1,160,000đ</span>
+    </div>
+    <div class="summary-item">
+      Chờ xử lý: <span>360,000đ</span>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div>© 2025 𝑺𝑷𝑨𝑴 𝑻𝑰𝑲 𝑻𝑶𝑲 𝑺𝟎𝟐 - 𝑳𝑶𝑷𝑬𝑹𝑺🐣. All rights reserved.</div>
+  <div class="social-links">
+    <a href="#"><i class="fab fa-telegram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mainNav = document.getElementById('mainNav');
+  
+  mobileMenuBtn.addEventListener('click', () => {
+    mainNav.classList.toggle('active');
+  });
+  
+  // Date selector functionality
+  const dateSelect = document.getElementById('date-select');
+  
+  dateSelect.addEventListener('change', function() {
+    // In a real app, this would fetch data for the selected date
+    alert('Đã chọn: ' + this.value + '. Trong ứng dụng thực, điều này sẽ tải dữ liệu mới.');
+  });
+</script>
+
+</body>
+</html>
