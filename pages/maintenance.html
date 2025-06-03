@@ -9,6 +9,33 @@
   <link rel="stylesheet" href="maintenance.css">
   <style>
 
+    .home-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 10px;
+  color: yellowgreen;
+  background-color: #1a1a1a;
+  border: 2px solid yellowgreen;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(173, 255, 47, 0.2);
+}
+
+.home-btn i {
+  font-size: 18px;
+}
+
+.home-btn:hover {
+  background-color: yellowgreen;
+  color: #1a1a1a;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 16px rgba(173, 255, 47, 0.4);
+}
+
   </style>
 </head>
 <body>
@@ -50,14 +77,18 @@
     </div>
     
     <div class="message">
-      Theo dõi các kênh dưới đây để cập nhật thông tin mới nhất
+      Theo dõi các kênh dưới đây để cập nhật thông tin mới nhất <br><br>
+      <a style="color: yellowgreen;" href="../index.html" class="home-btn">
+  <i class="fas fa-home"></i> VỀ TRANG CHỦ
+</a>
+
     </div>
-    
-    <div class="social-links">
+
+    <!-- <div class="social-links">
       <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
       <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
       <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-    </div>
+    </div> -->
   </div>
 
   <script src="maintenance.js">
