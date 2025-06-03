@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tin Tức - SPAM TIK TOK</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Phần head giống các trang trước -->
+   <link rel="stylesheet" href="style.css">
+  <style>
+  </style>
+</head>
+<body>
+  <header class="main-header">
+  <div class="header-container">
+    <div class="logo">
+      <i class="fas fa-rocket"></i>
+      <span>SPAM TIK TOK</span>
+    </div>
+    
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+    
+    <nav class="main-nav" id="mainNav">
+      <a href="../index.html"><i class="fas fa-home"></i> Trang Chủ</a>
+      <a href="../noi-quy/index.html"><i class="fas fa-scroll"></i> Nội Quy</a>
+      <a href="../bang-luong/index.html"><i class="fas fa-money-bill-wave"></i> Bảng Lương</a>
+      <a href="../thong-ke/index.html"><i class="fas fa-chart-pie"></i> Thống Kê</a>
+      <a href="../huong-dan/index.html"><i class="fas fa-book"></i> Hướng Dẫn</a>
+    </nav>
+  </div>
+</header>
+  
+  <div class="news-container">
+    <h1 style="color:#00ffcc;text-align:center"><i class="fas fa-newspaper"></i> TIN TỨC CẬP NHẬT</h1>
+    
+    <div class="news-card">
+      <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="news-image">
+      <div class="news-content">
+        <div class="news-date">02/06/2025</div>
+        <h3 class="news-title"><a style="color: #ffffff;" href="#">TikTok thay đổi thuật toán - Cách thích nghi</a></h3>
+        <p>Từ ngày 01/06, TikTok đã cập nhật thuật toán mới chống spam...</p>
+        <div>
+          <span class="news-tag">thuật toán</span>
+          <span class="news-tag">update</span>
+        </div>
+      </div>
+    </div>
+    <div class="news-card">
+      <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="news-image">
+      <div class="news-content">
+        <div class="news-date">01/06/2025</div>
+        <h3 class="news-title"><a style="color: #ffffff;" href="#">Cách tăng tương tác hiệu quả trên TikTok</a></h3>
+        <p>Hướng dẫn chi tiết các phương pháp tăng tương tác...</p>
+        <div>
+          <span class="news-tag">tương tác</span>
+          <span class="news-tag">hướng dẫn</span>
+        </div>
+      </div>
+    </div>
+        <div class="news-card">
+      <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="news-image">
+      <div class="news-content">
+        <div class="news-date">02/06/2025</div>
+        <h3 class="news-title"><a style="color: #ffffff;" href="#">TikTok thay đổi thuật toán - Cách thích nghi</a></h3>
+        <p>Từ ngày 01/06, TikTok đã cập nhật thuật toán mới chống spam...</p>
+        <div>
+          <span class="news-tag">thuật toán</span>
+          <span class="news-tag">update</span>
+        </div>
+      </div>
+    </div>
+        <div class="news-card">
+      <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="news-image">
+      <div class="news-content">
+        <div class="news-date">02/06/2025</div>
+        <h3 class="news-title"><a style="color: #ffffff;" href="#">TikTok thay đổi thuật toán - Cách thích nghi</a></h3>
+        <p>Từ ngày 01/06, TikTok đã cập nhật thuật toán mới chống spam...</p>
+        <div>
+          <span class="news-tag">thuật toán</span>
+          <span class="news-tag">update</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Thêm các tin khác -->
+    
+    <div class="pagination">
+      <button class="page-btn active">1</button>
+      <button class="page-btn">2</button>
+      <button class="page-btn">3</button>
+    </div>
+  </div>
+<footer>
+  <div>© 2025 𝑺𝑷𝑨𝑴 𝑻𝑰𝑲 𝑻𝑶𝑲 𝑺𝟎𝟐 - 𝑳𝑶𝑷𝑬𝑹𝑺🐣. All rights reserved.</div>
+  <div class="social-links">
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="https://t.me/the_king19_04"><i class="fab fa-telegram"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+  </div>
+</footer>
+  <script>
+    // Phân trang
+    document.querySelectorAll('.page-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.page-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        // Load dữ liệu trang mới
+      });
+    });
+  </script>
+</body>
+</html>
