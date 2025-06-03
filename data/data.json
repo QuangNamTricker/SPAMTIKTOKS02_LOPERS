@@ -1,9 +1,4 @@
 {
-  "02/06/2025": [
-    { "name": "", "quantity": , "unitPrice": , "status": "" },
-    { "name": "", "quantity": , "unitPrice": , "status": "" },
-    { "name": "", "quantity": , "unitPrice": , "status": "" }
-  ],
   "01/06/2025": [
     { "name": "Từ Quang Nam", "quantity": 150, "unitPrice": 400, "status": "Đã thanh toán" },
     { "name": "Trần Thị B", "quantity": 200, "unitPrice": 400, "status": "Đã thanh toán" },
