@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Hỏi Đáp - SPAM TIK TOK</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- Phần head giống các trang trước -->
+  <style>
+    .faq-container {
+      max-width: 900px;
+      margin: 40px auto;
+    }
+    .search-box {
+      margin-bottom: 30px;
+      position: relative;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 15px;
+      background: rgba(0,0,0,0.4);
+      border: 1px solid #00ffcc;
+      color: white;
+      border-radius: 30px;
+      padding-left: 45px;
+    }
+    .search-box i {
+      position: absolute;
+      left: 15px;
+      top: 15px;
+      color: #00ffcc;
+    }
+    .faq-item {
+      background: rgba(0,0,0,0.4);
+      border-radius: 10px;
+      margin-bottom: 15px;
+      overflow: hidden;
+    }
+    .faq-question {
+      padding: 15px;
+      background: rgba(0,255,204,0.1);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+    }
+    .faq-answer {
+      padding: 0 15px;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .faq-item.active .faq-answer {
+      padding: 15px;
+      max-height: 500px;
+    }
+    .tag {
+      display: inline-block;
+      background: rgba(0,255,204,0.2);
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.8em;
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header giống các trang trước -->
+  <header class="main-header">
+  <div class="header-container">
+    <div class="logo">
+      <i class="fas fa-rocket"></i>
+      <span>SPAM TIK TOK</span>
+    </div>
+    
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+    
+    <nav class="main-nav" id="mainNav">
+      <a href="../index.html"><i class="fas fa-home"></i> Trang Chủ</a>
+      <a href="../noi-quy/index.html"><i class="fas fa-scroll"></i> Nội Quy</a>
+      <a href="../bang-luong/index.html"><i class="fas fa-money-bill-wave"></i> Bảng Lương</a>
+      <a href="../thong-ke/index.html"><i class="fas fa-chart-pie"></i> Thống Kê</a>
+      <a href="../huong-dan/index.html"><i class="fas fa-book"></i> Hướng Dẫn</a>
+    </nav>
+  </div>
+</header>
+  <div class="faq-container">
+    <h1 style="text-align:center;color:#00ffcc"><i class="fas fa-question-circle"></i> HỎI ĐÁP THẮC MẮC</h1>
+    
+    <div class="search-box">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Tìm kiếm câu hỏi...">
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <span>Làm sao để tránh bị ban tài khoản?</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        <p>Sử dụng proxy chất lượng, không spam quá 10 bài/giờ, luân phiên nhiều tài khoản.</p>
+        <div style="margin-top:10px">
+          <span class="tag">anti-ban</span>
+          <span class="tag">proxy</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Thêm các câu hỏi khác -->
+  </div>
+<footer>
+  <div>© 2025 𝑺𝑷𝑨𝑴 𝑻𝑰𝑲 𝑻𝑶𝑲 𝑺𝟎𝟐 - 𝑳𝑶𝑷𝑬𝑹𝑺🐣. All rights reserved.</div>
+  <div class="social-links">
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="https://t.me/the_king19_04"><i class="fab fa-telegram"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+  </div>
+</footer>
+  <script>
+    function toggleFAQ(question) {
+      const item = question.parentElement;
+      item.classList.toggle('active');
+      
+      const icon = question.querySelector('i');
+      icon.classList.toggle('fa-chevron-down');
+      icon.classList.toggle('fa-chevron-up');
+    }
+    
+    // Tìm kiếm
+    document.querySelector('.search-box input').addEventListener('input', function(e) {
+      const searchTerm = e.target.value.toLowerCase();
+      document.querySelectorAll('.faq-item').forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(searchTerm) ? 'block' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
