@@ -1,0 +1,132 @@
+    :root {
+      --primary: #00ff41;
+      --bg: #0d0208;
+    }
+    
+    body {
+      margin: 0;
+      font-family: 'Roboto Mono', monospace;
+      background: var(--bg);
+      color: var(--primary);
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .matrix-rain {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      opacity: 0.3;
+    }
+    
+    .maintenance-container {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      text-align: center;
+      padding: 20px;
+    }
+    
+    .logo {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px var(--primary);
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 1; text-shadow: 0 0 20px var(--primary); }
+    }
+    
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+    
+    .message {
+      max-width: 600px;
+      margin-bottom: 40px;
+      line-height: 1.6;
+      font-size: 1.1em;
+    }
+    
+    .progress-container {
+      width: 100%;
+      max-width: 500px;
+      background: rgba(0, 255, 65, 0.1);
+      height: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      overflow: hidden;
+      border: 1px solid var(--primary);
+    }
+    
+    .progress-bar {
+      height: 100%;
+      width: 65%;
+      background: linear-gradient(90deg, var(--primary), #00cc33);
+      border-radius: 10px;
+      animation: progress 3s ease-in-out infinite;
+      position: relative;
+    }
+    
+    @keyframes progress {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    
+    .countdown {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+    
+    .countdown-item {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 15px;
+      border-radius: 5px;
+      border: 1px solid var(--primary);
+      min-width: 80px;
+    }
+    
+    .countdown-value {
+      font-size: 2em;
+      font-weight: bold;
+    }
+    
+    .countdown-label {
+      font-size: 0.8em;
+      opacity: 0.8;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .social-link {
+      color: var(--primary);
+      font-size: 1.5em;
+      transition: all 0.3s ease;
+    }
+    
+    .social-link:hover {
+      transform: translateY(-5px);
+      text-shadow: 0 0 15px var(--primary);
+    }
+    
+    @media (max-width: 768px) {
+      h1 { font-size: 2em; }
+      .countdown { flex-wrap: wrap; justify-content: center; }
+    }
