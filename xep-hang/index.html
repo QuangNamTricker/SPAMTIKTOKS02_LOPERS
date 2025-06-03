@@ -1,0 +1,76 @@
+<!--
+// Bảng xếp hạng người dùng
+// Chức năng: Hiển thị bảng xếp hạng người dùng dựa trên dữ liệu từ file JSON
+// Phiên bản: 1.0
+// Tác giả: [Từ Quang Nam]
+// Ngày tạo: [03/06/2025]
+// Ngày cập nhật: [03/06/2025]
+// Thư viện: Không sử dụng thư viện bên ngoài
+// Mô tả: Trang này hiển thị bảng xếp hạng người dùng theo ngày, tuần hoặc tháng. 
+-->
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bảng Xếp Hạng - SPAM TIK TOK</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+  </style>
+</head>
+<body>
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo">
+        <i class="fas fa-rocket"></i>
+        <span>SPAM TIK TOK</span>
+      </div>
+      
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <nav class="main-nav" id="mainNav">
+        <a href="../index.html"><i class="fas fa-home"></i> Trang Chủ</a>
+        <a href="../noi-quy/index.html"><i class="fas fa-scroll"></i> Nội Quy</a>
+        <a href="../bang-luong/index.html"><i class="fas fa-money-bill-wave"></i> Bảng Lương</a>
+        <a href="../thong-ke/index.html"><i class="fas fa-chart-pie"></i> Thống Kê</a>
+        <a href="../huong-dan/index.html"><i class="fas fa-book"></i> Hướng Dẫn</a>
+      </nav>
+    </div>
+  </header>
+  
+  <div class="leaderboard">
+    <div class="leaderboard-header">
+      <h1 style="color:#00ffcc"><i class="fas fa-trophy"></i> BẢNG XẾP HẠNG</h1>
+      <div class="tabs">
+        <div class="tab active" data-period="today">Hôm nay</div>
+        <div class="tab" data-period="week">Tuần này</div>
+        <div class="tab" data-period="month">Tháng này</div>
+      </div>
+    </div>
+    
+    <div id="leaderboard-content">
+      <div class="loading-spinner">
+        <i class="fas fa-spinner fa-spin"></i> Đang tải dữ liệu...
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    <div>© 2025 𝑺𝑷𝑨𝑴 𝑻𝑰𝑲 𝑻𝑶𝑲 𝑺𝟎𝟐 - 𝑳𝑶𝑷𝑬𝑹𝑺🐣. All rights reserved.</div>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="https://t.me/the_king19_04"><i class="fab fa-telegram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+  </footer>
+
+  <script src="script.js">
+  </script>
+</body>
+</html>
