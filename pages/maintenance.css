@@ -1,4 +1,41 @@
-    :root {
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, rgba(0, 255, 100, 0.1), transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+  animation: glowPulse 5s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+.hacker-code {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 14px;
+  color: #00ff41;
+  white-space: pre-wrap;
+  line-height: 1.5;
+  z-index: 1;
+  width: 500px;
+  max-height: 40%;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border: 1px solid #00ff41;
+  border-radius: 5px;
+  box-shadow: 0 0 20px #00ff41;
+  pointer-events: none;
+}
+
+ 
+ :root {
       --primary: #00ff41;
       --bg: #0d0208;
     }
