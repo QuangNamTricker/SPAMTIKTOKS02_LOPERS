@@ -128,7 +128,7 @@ function typeLine() {
 typeLine();
 
 
-const countdownTarget = new Date("2025-06-05T22:00:00");
+const countdownTarget = new Date("2025-06-07T22:00:00");
   countdownTarget.setDate(countdownTarget.getDate() + 2);
   countdownTarget.setHours(countdownTarget.getHours() + 12);
 
