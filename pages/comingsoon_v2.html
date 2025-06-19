@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sắp Ra Mắt - SPAM TIK TOK</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #6e45e2;
+      --secondary: #88d3ce;
+      --accent: #ff7e5f;
+      --dark: #0f0c29;
+      --light: #f8f9fa;
+      --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--dark);
+      color: var(--light);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    
+    /* Particle background */
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+    
+    /* Main container */
+    .comingsoon-container {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+    
+    /* Logo */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: white;
+      transition: all 0.3s ease;
+    }
+    
+    .logo-icon {
+      font-size: 3rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    
+    /* Header */
+    h1 {
+      font-size: 4rem;
+      margin: 1rem 0;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      line-height: 1.2;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .subtitle {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+      max-width: 700px;
+      line-height: 1.6;
+    }
+    
+    /* Countdown */
+    .countdown {
+      display: flex;
+      gap: 1.5rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .countdown-item {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1.5rem 1rem;
+      border-radius: 15px;
+      min-width: 100px;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+    
+    .countdown-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+    
+    .countdown-value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .countdown-label {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-top: 0.5rem;
+      opacity: 0.8;
+    }
+    
+    /* Notify form */
+    .notify-section {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 20px;
+      margin: 2rem 0;
+      max-width: 700px;
+      width: 100%;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeInUp 0.8s 0.4s forwards;
+    }
+    
+    @keyframes fadeInUp {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    
+    .notify-title {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--secondary);
+    }
+    
+    .notify-form {
+      display: flex;
+      gap: 1rem;
+      width: 100%;
+    }
+    
+    .notify-input {
+      flex: 1;
+      padding: 1rem 1.5rem;
+      border: none;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-size: 1rem;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+    
+    .notify-input:focus {
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+    
+    .notify-input::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+    
+    .notify-btn {
+      padding: 1rem 2rem;
+      background: var(--gradient);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+      box-shadow: 0 5px 15px rgba(110, 69, 226, 0.4);
+    }
+    
+    .notify-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(110, 69, 226, 0.6);
+    }
+    
+    .notify-btn:active {
+      transform: translateY(1px);
+    }
+    
+    /* Home button */
+    .home-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      padding: 1rem 2rem;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 1rem 0;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .home-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-3px);
+    }
+    
+    /* Social links */
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .social-link {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .social-link:hover {
+      background: var(--gradient);
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0 10px 20px rgba(110, 69, 226, 0.3);
+      color: white;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .subtitle {
+        font-size: 1.2rem;
+      }
+      
+      .countdown-item {
+        min-width: 80px;
+        padding: 1rem 0.5rem;
+      }
+      
+      .countdown-value {
+        font-size: 2rem;
+      }
+      
+      .notify-form {
+        flex-direction: column;
+      }
+      
+      .notify-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Particle background -->
+  <div id="particles-js"></div>
+  
+  <!-- Main content -->
+  <div class="comingsoon-container">
+    <div class="logo">
+      <i class="fas fa-rocket logo-icon"></i>
+      <span>SPAM TIK TOK</span>
+    </div>
+    
+    <h1>Sắp Ra Mắt</h1>
+    <div class="subtitle">Phiên bản mới với nhiều tính năng đột phá đang trong giai đoạn hoàn thiện. Hãy cùng chờ đón!</div>
+    
+    <div class="countdown">
+      <div class="countdown-item">
+        <div class="countdown-value" id="days">00</div>
+        <div class="countdown-label">Ngày</div>
+      </div>
+      <div class="countdown-item">
+        <div class="countdown-value" id="hours">00</div>
+        <div class="countdown-label">Giờ</div>
+      </div>
+      <div class="countdown-item">
+        <div class="countdown-value" id="minutes">00</div>
+        <div class="countdown-label">Phút</div>
+      </div>
+      <div class="countdown-item">
+        <div class="countdown-value" id="seconds">00</div>
+        <div class="countdown-label">Giây</div>
+      </div>
+    </div>
+    
+    <div class="notify-section">
+      <div class="notify-title">Đăng ký nhận thông báo khi ra mắt</div>
+      <form class="notify-form">
+        <input type="email" class="notify-input" placeholder="Nhập email của bạn" required>
+        <button type="submit" class="notify-btn">ĐĂNG KÝ NGAY</button>
+      </form>
+    </div>
+    
+    <a href="../index.html" class="home-btn">
+      <i class="fas fa-home"></i> VỀ TRANG CHỦ
+    </a>
+    
+    <div class="social-links">
+      <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+      <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+      <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </div>
+
+  <!-- Particle.js library -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  
+  <script>
+    // Initialize particles.js
+    particlesJS('particles-js', {
+      "particles": {
+        "number": {
+          "value": 80,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#6e45e2"
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#000000"
+          },
+          "polygon": {
+            "nb_sides": 5
+          }
+        },
+        "opacity": {
+          "value": 0.5,
+          "random": false,
+          "anim": {
+            "enable": false,
+            "speed": 1,
+            "opacity_min": 0.1,
+            "sync": false
+          }
+        },
+        "size": {
+          "value": 3,
+          "random": true,
+          "anim": {
+            "enable": false,
+            "speed": 40,
+            "size_min": 0.1,
+            "sync": false
+          }
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#6e45e2",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": {
+            "enable": false,
+            "rotateX": 600,
+            "rotateY": 1200
+          }
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "grab"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 140,
+            "line_linked": {
+              "opacity": 1
+            }
+          },
+          "bubble": {
+            "distance": 400,
+            "size": 40,
+            "duration": 2,
+            "opacity": 8,
+            "speed": 3
+          },
+          "repulse": {
+            "distance": 200,
+            "duration": 0.4
+          },
+          "push": {
+            "particles_nb": 4
+          },
+          "remove": {
+            "particles_nb": 2
+          }
+        }
+      },
+      "retina_detect": true
+    });
+
+    // Countdown timer
+    function updateCountdown() {
+      // Set target date to June 15, 2025 at 00:00:00
+      const targetDate = new Date(2025, 5, 20, 0, 0, 0); // Note: Month is 0-indexed (5 = June)
+      
+      const now = new Date();
+      const diff = targetDate - now;
+      
+      if (diff <= 0) {
+        document.getElementById('days').textContent = '00';
+        document.getElementById('hours').textContent = '00';
+        document.getElementById('minutes').textContent = '00';
+        document.getElementById('seconds').textContent = '00';
+        return;
+      }
+      
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      
+      document.getElementById('days').textContent = days.toString().padStart(2, '0');
+      document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+      document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+      document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+    }
+    
+    // Initialize countdown
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+    
+    // Form submission
+    document.querySelector('.notify-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = this.querySelector('input').value;
+      
+      // Simple validation
+      if (email && email.includes('@') && email.includes('.')) {
+        alert('Cảm ơn bạn đã đăng ký! Chúng tôi sẽ thông báo khi phiên bản mới ra mắt.');
+        this.reset();
+      } else {
+        alert('Vui lòng nhập địa chỉ email hợp lệ.');
+      }
+    });
+    
+    // Add hover effects
+    document.querySelectorAll('.countdown-item').forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        item.style.transform = 'translateY(-10px)';
+        item.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.3)';
+      });
+      
+      item.addEventListener('mouseleave', () => {
+        item.style.transform = 'translateY(0)';
+        item.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.2)';
+      });
+    });
+  </script>
+</body>
+</html>

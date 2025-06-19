@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bảo Trì Hệ Thống - SPAM TIK TOK</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #4361ee;
+      --secondary: #3f37c9;
+      --accent: #4cc9f0;
+      --dark: #0d1b2a;
+      --light: #f8f9fa;
+      --success: #2ecc71;
+      --warning: #f39c12;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--dark);
+      color: var(--light);
+      min-height: 100vh;
+      overflow-y: auto; /* Cho phép scroll */
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+    
+    /* Background animation */
+    .particles {
+      position: fixed; /* Thay absolute bằng fixed để cố định khi scroll */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+    }
+    
+    .particle {
+      position: absolute;
+      background: rgba(76, 201, 240, 0.5);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    
+    /* Main container */
+    .maintenance-container {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      width: 90%;
+      padding: 3rem;
+      background: rgba(13, 27, 42, 0.8);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(67, 97, 238, 0.3);
+      text-align: center;
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out forwards;
+      margin: 2rem 0; /* Thêm margin để không dính sát khi scroll */
+    }
+    
+    @keyframes fadeInUp {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    
+    /* Logo */
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    
+    .logo-icon {
+      font-size: 2.5rem;
+      color: var(--primary);
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    
+    /* Header */
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      position: relative;
+      display: inline-block;
+    }
+    
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 3px;
+    }
+    
+    /* Message */
+    .message {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      color: rgba(248, 249, 250, 0.8);
+    }
+    
+    /* Progress bar */
+    .progress-container {
+      width: 100%;
+      height: 12px;
+      background: rgba(67, 97, 238, 0.2);
+      border-radius: 6px;
+      margin: 2rem 0;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .progress-bar {
+      height: 100%;
+      width: 65%;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      border-radius: 6px;
+      position: relative;
+      animation: progressAnimation 3s ease-in-out infinite, progressWidth 6s ease-in-out infinite;
+    }
+    
+    @keyframes progressAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    @keyframes progressWidth {
+      0%, 100% { width: 65%; }
+      50% { width: 70%; }
+    }
+    
+    .progress-bar::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.3), 
+        transparent);
+      animation: shine 2s infinite;
+    }
+    
+    @keyframes shine {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    
+    /* Countdown */
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+    
+    .countdown-item {
+      background: rgba(15, 30, 50, 0.6);
+      padding: 1.2rem 1rem;
+      border-radius: 10px;
+      min-width: 90px;
+      border: 1px solid rgba(67, 97, 238, 0.3);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .countdown-item::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        to bottom right,
+        transparent,
+        transparent,
+        transparent,
+        rgba(76, 201, 240, 0.1)
+      );
+      transform: rotate(30deg);
+      animation: countdownGlow 3s linear infinite;
+    }
+    
+    @keyframes countdownGlow {
+      0% { transform: rotate(30deg) translate(-30%, -30%); }
+      100% { transform: rotate(30deg) translate(30%, 30%); }
+    }
+    
+    .countdown-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(67, 97, 238, 0.3);
+    }
+    
+    .countdown-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    
+    .countdown-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: rgba(248, 249, 250, 0.7);
+    }
+    
+    /* Target time display */
+    .target-time {
+      margin: 1rem 0;
+      font-size: 1.2rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    
+    /* Buttons */
+    .action-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      box-shadow: 0 4px 15px rgba(67, 97, 238, 0.4);
+    }
+    
+    .btn-secondary {
+      background: rgba(15, 30, 50, 0.6);
+      color: var(--accent);
+      border: 1px solid rgba(76, 201, 240, 0.3);
+    }
+    
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(67, 97, 238, 0.6);
+    }
+    
+    .btn:active {
+      transform: translateY(1px);
+    }
+    
+    .btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+      );
+      transform: translateX(-100%);
+      transition: transform 0.6s ease;
+    }
+    
+    .btn:hover::after {
+      transform: translateX(100%);
+    }
+    
+    /* Status console */
+    .console-container {
+      margin-top: 2rem;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      padding: 1rem;
+      border: 1px solid rgba(67, 97, 238, 0.2);
+      max-height: 200px;
+      overflow-y: auto;
+      text-align: left;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+    }
+    
+    .console-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(67, 97, 238, 0.2);
+      color: var(--accent);
+    }
+    
+    .console-title {
+      font-weight: 600;
+    }
+    
+    .console-content {
+      line-height: 1.5;
+    }
+    
+    .log-entry {
+      margin-bottom: 0.3rem;
+      display: flex;
+      gap: 0.5rem;
+    }
+    
+    .log-time {
+      color: rgba(248, 249, 250, 0.5);
+    }
+    
+    .log-message {
+      flex: 1;
+    }
+    
+    .log-success {
+      color: var(--success);
+    }
+    
+    .log-warning {
+      color: var(--warning);
+    }
+    
+    .log-error {
+      color: #e74c3c;
+    }
+    
+    .log-info {
+      color: var(--accent);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem;
+      }
+      
+      .maintenance-container {
+        padding: 2rem 1.5rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .logo {
+        font-size: 1.5rem;
+      }
+      
+      .logo-icon {
+        font-size: 2rem;
+      }
+      
+      .countdown-item {
+        min-width: 70px;
+        padding: 1rem 0.5rem;
+      }
+      
+      .countdown-value {
+        font-size: 1.5rem;
+      }
+    }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary);
+      border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--secondary);
+    }
+  </style>
+</head>
+<body>
+  <!-- Particle background -->
+  <div class="particles" id="particles"></div>
+  
+  <!-- Main content -->
+  <div class="maintenance-container">
+    <div class="logo">
+      <i class="fas fa-bolt logo-icon"></i>
+      <span>SPAM TIK TOK</span>
+    </div>
+    
+    <h1>HỆ THỐNG ĐANG BẢO TRÌ</h1>
+    
+    <div class="message">
+      Chúng tôi đang nâng cấp hệ thống để mang đến trải nghiệm tốt hơn. 
+      Quá trình bảo trì dự kiến sẽ hoàn thành sau:
+    </div>
+    
+    <div class="target-time" id="targetTimeDisplay">
+      <!--const targetDate = new Date(2025, 5, 20, 20, 0, 0);
+      const targetDate = new Date(2025, 5, 19, 19, 50, 0);
+             -->
+    </div>
+    
+    <div class="countdown">
+      <div class="countdown-item">
+        <div class="countdown-value" id="days">00</div>
+        <div class="countdown-label">Ngày</div>
+      </div>
+      <div class="countdown-item">
+        <div class="countdown-value" id="hours">00</div>
+        <div class="countdown-label">Giờ</div>
+      </div>
+      <div class="countdown-item">
+        <div class="countdown-value" id="minutes">00</div>
+        <div class="countdown-label">Phút</div>
+      </div>
+      <div class="countdown-item">
+        <div class="countdown-value" id="seconds">00</div>
+        <div class="countdown-label">Giây</div>
+      </div>
+    </div>
+    
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+    
+    <div class="console-container">
+      <div class="console-header">
+        <span class="console-title">HỆ THỐNG BẢO TRÌ</span>
+        <span><i class="fas fa-circle"></i> <i class="fas fa-circle"></i> <i class="fas fa-circle"></i></span>
+      </div>
+      <div class="console-content" id="consoleContent">
+        <!-- Logs will be added here by JavaScript -->
+      </div>
+    </div>
+    
+    <div class="action-buttons">
+      <a href="../index.html" class="btn btn-primary">
+        <i class="fas fa-home"></i> Về trang chủ
+      </a>
+      <a href="#" class="btn btn-secondary">
+        <i class="fas fa-envelope"></i> Liên hệ hỗ trợ
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // Particle background
+    function initParticles() {
+      const container = document.getElementById('particles');
+      const particleCount = window.innerWidth < 768 ? 30 : 50;
+      
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        const size = Math.random() * 5 + 1;
+        const posX = Math.random() * window.innerWidth;
+        const posY = Math.random() * window.innerHeight;
+        const duration = Math.random() * 20 + 10;
+        const delay = Math.random() * 5;
+        const opacity = Math.random() * 0.5 + 0.1;
+        
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.left = `${posX}px`;
+        particle.style.top = `${posY}px`;
+        particle.style.animation = `float ${duration}s ease-in-out ${delay}s infinite`;
+        particle.style.opacity = opacity;
+        
+        container.appendChild(particle);
+      }
+    }
+    
+    // Floating animation for particles
+    const style = document.createElement('style');
+    style.innerHTML = `
+      @keyframes float {
+        0%, 100% {
+          transform: translate(0, 0);
+        }
+        25% {
+          transform: translate(20px, 20px);
+        }
+        50% {
+          transform: translate(-20px, 20px);
+        }
+        75% {
+          transform: translate(-20px, -20px);
+        }
+      }
+    `;
+    document.head.appendChild(style);
+    
+    // Console logs
+    const consoleContent = document.getElementById('consoleContent');
+    const logMessages = [
+      { message: 'Khởi động hệ thống bảo trì...', type: 'info' },
+      { message: 'Kiểm tra kết nối cơ sở dữ liệu...', type: 'info' },
+      { message: 'Kết nối cơ sở dữ liệu thành công', type: 'success' },
+      { message: 'Bắt đầu nâng cấp module tương tác...', type: 'info' },
+      { message: 'Cảnh báo: Tải dữ liệu chậm hơn dự kiến', type: 'warning' },
+      { message: 'Tối ưu hóa hiệu suất hệ thống...', type: 'info' },
+      { message: 'Đã hoàn thành 65% quá trình bảo trì', type: 'success' },
+      { message: 'Kiểm tra tính tương thích với phiên bản mới...', type: 'info' },
+      { message: 'Cập nhật giao diện người dùng...', type: 'info' },
+      { message: 'Chuẩn bị khởi động lại dịch vụ...', type: 'info' },
+    ];
+    
+    function addLog(message, type = 'info') {
+      const logEntry = document.createElement('div');
+      logEntry.classList.add('log-entry');
+      
+      const now = new Date();
+      const timeString = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}`;
+      
+      logEntry.innerHTML = `
+        <span class="log-time">[${timeString}]</span>
+        <span class="log-message log-${type}">${message}</span>
+      `;
+      
+      consoleContent.appendChild(logEntry);
+      consoleContent.scrollTop = consoleContent.scrollHeight;
+    }
+    
+    // Countdown timer with specific target date
+    function updateCountdown() {
+      const targetDate = new Date(2025, 5, 20, 20, 0, 0);
+      
+      const now = new Date();
+      const diff = targetDate - now;
+      
+      if (diff <= 0) {
+        document.getElementById('days').textContent = '00';
+        document.getElementById('hours').textContent = '00';
+        document.getElementById('minutes').textContent = '00';
+        document.getElementById('seconds').textContent = '00';
+        
+        // Update progress bar to 100% when countdown finishes
+        document.querySelector('.progress-bar').style.width = '100%';
+        document.querySelector('.progress-bar').style.animation = 'none';
+        document.querySelector('.progress-bar').style.background = 'var(--success)';
+        
+        // Add completion log
+        if (!document.querySelector('.log-completion')) {
+          addLog('Hệ thống bảo trì đã hoàn thành!', 'success');
+          const completionLog = document.createElement('div');
+          completionLog.classList.add('log-entry', 'log-completion');
+          completionLog.innerHTML = `
+            <span class="log-time">[${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}]</span>
+            <span class="log-message log-success">Hệ thống sẵn sàng hoạt động trở lại</span>
+          `;
+          consoleContent.appendChild(completionLog);
+          consoleContent.scrollTop = consoleContent.scrollHeight;
+        }
+        
+        return;
+      }
+      
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      
+      document.getElementById('days').textContent = days.toString().padStart(2, '0');
+      document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+      document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+      document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+      
+      // Update progress bar based on time remaining (assuming 2 days total)
+      const totalHours = 2 * 24; // 2 days in hours
+      const hoursPassed = (totalHours * 60 * 60 * 1000 - diff) / (60 * 60 * 1000);
+      const progressPercent = (hoursPassed / totalHours) * 100;
+      document.querySelector('.progress-bar').style.width = `${Math.min(progressPercent, 100)}%`;
+    }
+    
+    // Initialize everything
+    document.addEventListener('DOMContentLoaded', () => {
+      initParticles();
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+      
+      // Format target date display 
+      const targetDate = new Date(2025, 5, 20, 20, 0, 0);
+      const options = { 
+        hour: '2-digit', 
+        minute: '2-digit', 
+        day: '2-digit', 
+        month: '2-digit', 
+        year: 'numeric' 
+      };
+      document.getElementById('targetTimeDisplay').innerHTML = `
+        <i class="fas fa-clock"></i> ${targetDate.toLocaleTimeString('vi-VN', options).replace(',', '')}
+      `;
+      
+      // Add logs with delay
+      logMessages.forEach((log, index) => {
+        setTimeout(() => {
+          addLog(log.message, log.type);
+        }, index * 1500);
+      });
+      
+      // Continue adding random logs
+      setInterval(() => {
+        const randomMessages = [
+          'Kiểm tra bảo mật hệ thống...',
+          'Tối ưu hóa hiệu suất API...',
+          'Cập nhật thư viện phụ thuộc...',
+          'Sao lưu dữ liệu người dùng...',
+          'Chạy kiểm tra tự động...'
+        ];
+        const randomTypes = ['info', 'success', 'warning'];
+        const randomMessage = randomMessages[Math.floor(Math.random() * randomMessages.length)];
+        const randomType = randomTypes[Math.floor(Math.random() * randomTypes.length)];
+        
+        addLog(randomMessage, randomType);
+      }, 5000);
+    });
+  </script>
+</body>
+</html>
