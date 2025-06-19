@@ -1,4 +1,278 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="5;url=/pages/maintenance.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đang chuyển hướng - SPAM TIK TOK</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #4361ee;
+      --secondary: #3f37c9;
+      --accent: #4cc9f0;
+      --dark: #0d1b2a;
+      --light: #f8f9fa;
+      --success: #2ecc71;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--dark);
+      color: var(--light);
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    /* Particle background */
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+    }
+    
+    .particle {
+      position: absolute;
+      background: rgba(76, 201, 240, 0.5);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    
+    /* Main content */
+    .redirect-container {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 600px;
+      padding: 2rem;
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    @keyframes fadeInUp {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    
+    /* Logo */
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    
+    .logo-icon {
+      font-size: 2.5rem;
+      color: var(--primary);
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    
+    /* Message */
+    .message {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    
+    .highlight {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    
+    /* Progress bar */
+    .progress-container {
+      width: 100%;
+      height: 8px;
+      background: rgba(67, 97, 238, 0.2);
+      border-radius: 4px;
+      margin: 2rem auto;
+      overflow: hidden;
+      max-width: 400px;
+    }
+    
+    .progress-bar {
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      border-radius: 4px;
+      position: relative;
+      transform-origin: left;
+      animation: progressShrink 5s linear forwards;
+    }
+    
+    @keyframes progressShrink {
+      0% { transform: scaleX(1); }
+      100% { transform: scaleX(0); }
+    }
+    
+    /* Countdown */
+    .countdown {
+      font-size: 1.2rem;
+      margin-top: 1.5rem;
+      color: var(--accent);
+    }
+    
+    .countdown-number {
+      display: inline-block;
+      min-width: 30px;
+      font-weight: 700;
+    }
+    
+    /* Spinner */
+    .spinner {
+      margin: 2rem auto;
+      width: 50px;
+      height: 50px;
+      border: 5px solid rgba(67, 97, 238, 0.2);
+      border-top-color: var(--primary);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .message {
+        font-size: 1.2rem;
+      }
+      
+      .logo {
+        font-size: 1.5rem;
+      }
+      
+      .logo-icon {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Particle background -->
+  <div class="particles" id="particles"></div>
+  
+  <!-- Main content -->
+  <div class="redirect-container">
+    <div class="logo">
+      <i class="fas fa-bolt logo-icon"></i>
+      <span>SPAM TIK TOK</span>
+    </div>
+    
+    <div class="message">
+      Trang Web đang bảo trì <br>Đang chuyển hướng đến trang <span class="highlight">Bảo Trì Hệ Thống</span>
+    </div>
+    
+    <div class="spinner"></div>
+    
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+    
+    <div class="countdown">
+      Chuyển hướng sau: <span class="countdown-number" id="countdown">2</span> giây
+    </div>
+  </div>
+
+  <script>
+    // Particle background
+    function initParticles() {
+      const container = document.getElementById('particles');
+      const particleCount = window.innerWidth < 768 ? 30 : 50;
+      
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        const size = Math.random() * 5 + 1;
+        const posX = Math.random() * window.innerWidth;
+        const posY = Math.random() * window.innerHeight;
+        const duration = Math.random() * 20 + 10;
+        const delay = Math.random() * 5;
+        const opacity = Math.random() * 0.5 + 0.1;
+        
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.left = `${posX}px`;
+        particle.style.top = `${posY}px`;
+        particle.style.animation = `float ${duration}s ease-in-out ${delay}s infinite`;
+        particle.style.opacity = opacity;
+        
+        container.appendChild(particle);
+      }
+    }
+    
+    // Floating animation for particles
+    const style = document.createElement('style');
+    style.innerHTML = `
+      @keyframes float {
+        0%, 100% {
+          transform: translate(0, 0);
+        }
+        25% {
+          transform: translate(20px, 20px);
+        }
+        50% {
+          transform: translate(-20px, 20px);
+        }
+        75% {
+          transform: translate(-20px, -20px);
+        }
+      }
+    `;
+    document.head.appendChild(style);
+    
+    // Countdown timer
+    let seconds = 5;
+    const countdownElement = document.getElementById('countdown');
+    const countdownInterval = setInterval(() => {
+      seconds--;
+      countdownElement.textContent = seconds;
+      
+      if (seconds <= 0) {
+        clearInterval(countdownInterval);
+      }
+    }, 1000);
+    
+    // Initialize everything
+    document.addEventListener('DOMContentLoaded', () => {
+      initParticles();
+    });
+  </script>
+</body>
+</html>
+
 <!-- index.html -->
-<script>
-  window.location.href = "/pages/maintenance.html";
-</script>
+<!-- <script>
+    window.location.href = "/pages/maintenance.html";
+  </script>
+   -->
