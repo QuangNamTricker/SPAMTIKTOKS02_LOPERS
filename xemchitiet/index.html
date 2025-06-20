@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuyển CTV SPAM TIKTOK - Kiếm Tiền Online</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8a2be2;
+            --primary-dark: #5a00a8;
+            --secondary: #ff00ff;
+            --accent: #00ffff;
+            --dark: #0f0f15;
+            --light: #f8f9fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        /* Particles background */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        
+        /* Header */
+        header {
+            padding: 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.2), rgba(90, 0, 168, 0.2));
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px var(--primary), 0 0 10px var(--primary);
+            }
+            to {
+                text-shadow: 0 0 10px var(--secondary), 0 0 20px var(--secondary);
+            }
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        /* Features */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 2rem;
+            width: 300px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(138, 43, 226, 0.3);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        /* CTA Section */
+        .cta {
+            text-align: center;
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.2), rgba(0, 255, 255, 0.2));
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 0, 255, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+            z-index: -1;
+        }
+        
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        /* Button */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(138, 43, 226, 0.6);
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
+        }
+        
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(30deg);
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover::after {
+            left: 100%;
+        }
+        
+        /* Contact */
+        .contact {
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--light);
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-link:hover {
+            background: rgba(138, 43, 226, 0.3);
+            transform: translateY(-3px);
+        }
+        
+        .contact-link i {
+            font-size: 1.2rem;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.3);
+            margin-top: 3rem;
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+    
+    <!-- Header -->
+<header class="main-header">
+  <div class="header-container">
+    <div class="logo">
+      <i class="fas fa-rocket"></i>
+      <span>SPAM TIK TOK</span>
+    </div>
+    
+    <!-- <button class="mobile-menu-btn" id="mobileMenuBtn">
+      <i class="fas fa-bars"></i>
+    </button> -->
+    
+    <!-- <nav class="main-nav" id="mainNav">
+      <a href="../index.html"><i class="fas fa-home"></i> Trang Chủ</a>
+      <a href="../noi-quy/index.html"><i class="fas fa-scroll"></i> Nội Quy</a>
+      <a href="../bang-luong/index.html"><i class="fas fa-money-bill-wave"></i> Bảng Lương</a>
+      <a href="../thong-ke/index.html"><i class="fas fa-chart-pie"></i> Thống Kê</a>
+      <a href="../huong-dan/index.html"><i class="fas fa-book"></i> Hướng Dẫn</a>
+    </nav> -->
+  </div>
+</header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="fade-in">🟣 TUYỂN CTV SPAM TIKTOK KIẾM TIỀN ONLINE 💸</h1>
+        
+        <div class="fade-in" style="transition-delay: 0.2s;">
+            <p><span class="highlight">🕶️ Không cần kinh nghiệm</span></p>
+            <p><span class="highlight">📱 Chỉ cần có điện thoại + Tài Khoản TikTok</span></p>
+            <p><span class="highlight">⚡ Làm mọi lúc, mọi nơi</span></p>
+            <p><span class="highlight">🔥 Thu nhập: Tùy sức cày – Có công là có tiền!</span></p>
+            <p><span class="highlight">💥 Chỉ cần spam đúng quy định là auto có tiền.</span></p>
+        </div>
+    </section>
+    
+    <!-- Features -->
+    <section class="features">
+        <div class="feature-card fade-in" style="transition-delay: 0.4s;">
+            <div class="feature-icon">👑</div>
+            <h3>Làm việc chuyên nghiệp</h3>
+            <p>Làm việc trực tiếp với team có kinh nghiệm lâu năm trong lĩnh vực TikTok</p>
+        </div>
+        
+        <div class="feature-card fade-in" style="transition-delay: 0.6s;">
+            <div class="feature-icon">🚀</div>
+            <h3>Hỗ trợ 1:1</h3>
+            <p>Đào tạo người mới từ A-Z, hỗ trợ 24/7 khi bạn cần</p>
+        </div>
+        
+        <div class="feature-card fade-in" style="transition-delay: 0.8s;">
+            <div class="feature-icon">💰</div>
+            <h3>Thanh toán hàng ngày</h3>
+            <p>Lương được thanh toán nhanh chóng, uy tín và minh bạch</p>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta">
+        <h2 class="fade-in">📌 SỐ LƯỢNG CTV CÓ GIỚI HẠN</h2>
+        <p class="fade-in" style="transition-delay: 0.2s;">Nhanh tay thì còn, chậm tay thì tiếc!</p>
+        <p class="fade-in" style="transition-delay: 0.4s; margin-bottom: 2rem;">🌟 Cơ hội đổi đời từ chính chiếc điện thoại bạn đang cầm trên tay!</p>
+        
+        <a href="https://spamtiktoks02-lopers.pages.dev" class="btn fade-in" style="transition-delay: 0.6s;">THAM GIA NGAY</a>
+    </section>
+    
+    <!-- Contact -->
+    <section class="contact">
+        <h2 class="fade-in">LIÊN HỆ VỚI CHÚNG TÔI</h2>
+        <p class="fade-in" style="transition-delay: 0.2s;">Tham gia ngay hôm nay để không bỏ lỡ cơ hội!</p>
+        
+        <div class="contact-links">
+            <a href="https://spamtiktoks02-lopers.pages.dev" class="contact-link fade-in" style="transition-delay: 0.4s;">
+                <i class="fas fa-globe"></i> Website
+            </a>
+            <a href="https://t.me/the_king1904" class="contact-link fade-in" style="transition-delay: 0.6s;">
+                <i class="fab fa-telegram"></i> Telegram
+            </a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="fade-in" style="transition-delay: 0.8s;">
+        <p>© 2023 TikTok Spam Team. All rights reserved.</p>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Particles.js configuration
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#8a2be2"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#8a2be2",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+        
+        // Scroll animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInOnScroll = () => {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementTop < windowHeight - 100) {
+                        element.classList.add('visible');
+                    }
+                });
+            };
+            
+            // Initial check
+            fadeInOnScroll();
+            
+            // Check on scroll
+            window.addEventListener('scroll', fadeInOnScroll);
+        });
+        
+        // Button ripple effect
+        const buttons = document.querySelectorAll('.btn');
+        buttons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const x = e.clientX - e.target.getBoundingClientRect().left;
+                const y = e.clientY - e.target.getBoundingClientRect().top;
+                
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                ripple.style.left = `${x}px`;
+                ripple.style.top = `${y}px`;
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                    window.location.href = this.getAttribute('href');
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>
