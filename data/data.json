@@ -6,7 +6,7 @@
     { "name": "Anh Thư", "quantity": 385, "unitPrice": 300, "status": "Đã thanh toán" },
         { "name": "Đô Năm Trăm", "quantity": 60, "unitPrice": 300, "status": "Chờ xử lý" },
         { "name": "hello hello", "quantity": 30, "unitPrice": 300, "status": "Đã thanh toán" },
-    { "name": "Quỳnh Chi", "quantity": 35, "unitPrice": 300, "status": "Chờ xử lý" },
+    { "name": "Quỳnh Chi", "quantity": 35, "unitPrice": 300, "status": "Đã thanh toán" },
     { "name": "Nhật Linh", "quantity": 90, "unitPrice": 300, "status": "Đã thanh toán" },
     { "name": "hê lô min", "quantity": 30, "unitPrice": 300, "status": "Đã thanh toán" }
   ]
