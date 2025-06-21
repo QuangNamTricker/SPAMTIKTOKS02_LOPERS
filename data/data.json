@@ -1,7 +1,7 @@
 {
   "21/06/2025": [
-    { "name": "Từ Quang Nam", "quantity": 15000, "unitPrice": 400, "status": "Đã thanh toán" },
-    { "name": "Vũ Yên", "quantity": 200, "unitPrice": 400, "status": "Đã thanh toán" },
-    { "name": "Ngọc Hà", "quantity": 180, "unitPrice": 400, "status": "Chờ xử lý" }
+    { "name": "ADMIN", "quantity": 15000, "unitPrice": 300, "status": "Đã thanh toán" },
+    { "name": "ADMIN1", "quantity": 500, "unitPrice": 300, "status": "Đã thanh toán" },
+    { "name": "ADMIN2", "quantity": 300, "unitPrice": 300, "status": "Chờ xử lý" }
   ]
 }
