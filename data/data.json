@@ -17,6 +17,6 @@
     { "name": "vanhieu", "quantity": 55, "unitPrice": 300, "status": "Đã thanh toán" },
     { "name": "Nhật Linh", "quantity": 80, "unitPrice": 300, "status": "Đã thanh toán" },
     { "name": "Ngọc Chi", "quantity": 198, "unitPrice": 300, "status": "Đã thanh toán" },
-    { "name": "Súp Bờ Men", "quantity": 60, "unitPrice": 300, "status": "Chờ xử lý" }
+    { "name": "Súp Bờ Men", "quantity": 60, "unitPrice": 300, "status": "Đã thanh toáný" }
   ]
 }
