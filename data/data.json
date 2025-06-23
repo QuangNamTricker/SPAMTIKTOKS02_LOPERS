@@ -20,7 +20,7 @@
     { "name": "Súp Bờ Men", "quantity": 60, "unitPrice": 300, "status": "Đã thanh toán" }
   ],
   "23/06/2025": [
-    { "name": "Kim Ngân", "quantity": 115, "unitPrice": 300, "status": "Chờ xử lý" },
+    { "name": "Kim Ngân", "quantity": 115, "unitPrice": 300, "status": "Đã thanh toán" },
     { "name": "Súp Bờ Men", "quantity": 138, "unitPrice": 300, "status": "Đã thanh toán" },
     { "name": "Vanhieu", "quantity": 123, "unitPrice": 300, "status": "Đã thanh toán" },
     { "name": "Anh Thư", "quantity": 140, "unitPrice": 300, "status": "Đã thanh toán" },
