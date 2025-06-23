@@ -20,12 +20,12 @@
     { "name": "Súp Bờ Men", "quantity": 60, "unitPrice": 300, "status": "Đã thanh toán" }
   ],
   "23/06/2025": [
-    { "name": "Kim Ngân", "quantity": 115, "unitPrice": 300, "status": "Chờ xử lý" },
-    { "name": "Súp Bờ Men", "quantity": 90, "unitPrice": 300, "status": "Chờ xử lý" },
-    { "name": "Vanhieu", "quantity": 78, "unitPrice": 300, "status": "Chờ xử lý" },
-    { "name": "Anh Thư", "quantity": 70, "unitPrice": 300, "status": "Chờ xử lý" },
-    { "name": "Ngọc Chi", "quantity": 120, "unitPrice": 300, "status": "Chờ xử lý" },
-    { "name": "Bá Tùng", "quantity": 0, "unitPrice": 300, "status": "Đang Cập Nhật" },
-    { "name": "Ngọc Chi", "quantity": 0, "unitPrice": 300, "status": "Đang Cập Nhật" }
+    { "name": "Kim Ngân", "quantity": 115, "unitPrice": 300, "status": "Đang Cập Nhật" },
+    { "name": "Súp Bờ Men", "quantity": 90, "unitPrice": 300, "status": "Đang Cập Nhật" },
+    { "name": "Vanhieu", "quantity": 123, "unitPrice": 300, "status": "Đang Cập Nhật" },
+    { "name": "Anh Thư", "quantity": 140, "unitPrice": 300, "status": "Đang Cập Nhật" },
+    { "name": "Ngọc Chi", "quantity": 120, "unitPrice": 300, "status": "Đang Cập Nhật" },
+    { "name": "Bá Tùng", "quantity": 25, "unitPrice": 300, "status": "Đang Cập Nhật" },
+    { "name": "Ngọc Chi", "quantity": 45, "unitPrice": 300, "status": "Đang Cập Nhật" }
   ]
 }
