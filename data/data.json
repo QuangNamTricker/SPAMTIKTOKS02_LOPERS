@@ -28,8 +28,8 @@
     { "name": "Ngọc Chi", "quantity": 167, "unitPrice": 300, "status": "Đã thanh toán" }
   ],
   "24/06/2025": [
-    { "name": "Sơn", "quantity": 26, "unitPrice": 300, "status": "Chờ xử lý" },
-    { "name": "Kim Ngân", "quantity": 65, "unitPrice": 300, "status": "Chờ xử lý" },
+    { "name": "Sơn", "quantity": 26, "unitPrice": 300, "status": "Đã thanh toán" },
+    { "name": "Kim Ngân", "quantity": 65, "unitPrice": 300, "status": "Đã thanh toán" },
     { "name": "VuXuanCuong", "quantity": 35, "unitPrice": 300, "status": "Chờ xử lý" },
     { "name": "Vanhieu", "quantity": 167, "unitPrice": 300, "status": "Chờ xử lý" },
     { "name": "Cơm Nguội", "quantity": 58, "unitPrice": 300, "status": "Đã thanh toán" },
@@ -41,7 +41,7 @@
     { "name": "Hye Min-Seo", "quantity": 76, "unitPrice": 300, "status": "Chờ xử lý" },
     { "name": "Gấu", "quantity": 251, "unitPrice": 300, "status": "Chờ xử lý" },
     { "name": "Anh Thư", "quantity": 262, "unitPrice": 300, "status": "Chờ xử lý" },
-    { "name": "TIGER BABY", "quantity": 61, "unitPrice": 300, "status": "Chờ xử lý" },
-    { "name": "Ngọc Chi", "quantity": 253, "unitPrice": 300, "status": "Chờ xử lý" }
+    { "name": "TIGER BABY", "quantity": 61, "unitPrice": 300, "status": "Đã thanh toán" },
+    { "name": "Ngọc Chi", "quantity": 253, "unitPrice": 300, "status": "Đã thanh toán" }
   ]
 }
