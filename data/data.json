@@ -27,21 +27,5 @@
     { "name": "Bá Tùng", "quantity": 45, "unitPrice": 300, "status": "Đã thanh toán" },
     { "name": "Ngọc Chi", "quantity": 167, "unitPrice": 300, "status": "Đã thanh toán" }
   ],
-  "24/06/2025": [
-    { "name": "Sơn", "quantity": 26, "unitPrice": 300, "status": "Chờ xử lý" },
-    { "name": "Kim Ngân", "quantity": 65, "unitPrice": 300, "status": "Chờ xử lý" },
-    { "name": "VuXuanCuong", "quantity": 35, "unitPrice": 300, "status": "Chờ xử lý" },
-    { "name": "Vanhieu", "quantity": 167, "unitPrice": 300, "status": "Chờ xử lý" },
-    { "name": "Cơm Nguội", "quantity": 58, "unitPrice": 300, "status": "Chờ xử lý" },
-    { "name": "Súp Bờ Men", "quantity": 72, "unitPrice": 300, "status": "Chờ xử lý" },
-    { "name": "Hải Bảo", "quantity": 185, "unitPrice": 300, "status": "Chờ xử lý" },
-    { "name": "Hye Min-Seo", "quantity": 76, "unitPrice": 300, "status": "Chờ xử lý" },
-    { "name": "Trang", "quantity": 273, "unitPrice": 300, "status": "Chờ xử lý" },
-    { "name": "Bảo Ngọc", "quantity": 264, "unitPrice": 300, "status": "Chờ xử lý" },
-    { "name": "Lan Anh", "quantity": 124, "unitPrice": 300, "status": "Chờ xử lý" },
-    { "name": "Gấu", "quantity": 251, "unitPrice": 300, "status": "Chờ xử lý" },
-    { "name": "Anh Thư", "quantity": 262, "unitPrice": 300, "status": "Chờ xử lý" },
-    { "name": "TIGER BABY", "quantity": 61, "unitPrice": 300, "status": "Chờ xử lý" },
-    { "name": "Ngọc Chi", "quantity": 178, "unitPrice": 300, "status": "Chờ xử lý" }
-  ]
+
 }
