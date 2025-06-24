@@ -2,5 +2,6 @@
   {"date": "2025-06-21", "customers": 11, "salary": 0},
   {"date": "2025-06-22", "customers": 19, "salary": 0},
   {"date": "2025-06-23", "customers": 15, "salary": 0},
-  {"date": "2025-06-24", "customers": 55, "salary": 60000}
+  {"date": "2025-06-24", "customers": 55, "salary": 60000},
+  {"date": "2025-06-25", "customers": 0, "salary": 0}
 ]
