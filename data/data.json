@@ -32,7 +32,7 @@
     { "name": "Kim Ngân", "quantity": 65, "unitPrice": 300, "status": "Chờ xử lý" },
     { "name": "VuXuanCuong", "quantity": 35, "unitPrice": 300, "status": "Chờ xử lý" },
     { "name": "Vanhieu", "quantity": 167, "unitPrice": 300, "status": "Chờ xử lý" },
-    { "name": "Cơm Nguội", "quantity": 58, "unitPrice": 300, "status": "Chờ xử lý" },
+    { "name": "Cơm Nguội", "quantity": 58, "unitPrice": 300, "status": "Đã thanh toán" },
     { "name": "Súp Bờ Men", "quantity": 72, "unitPrice": 300, "status": "Chờ xử lý" },
     { "name": "Hải Bảo", "quantity": 185, "unitPrice": 300, "status": "Chờ xử lý" },
     { "name": "Trang", "quantity": 273, "unitPrice": 300, "status": "Chờ xử lý" },
