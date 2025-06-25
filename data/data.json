@@ -48,7 +48,6 @@
   { "name": "Hải Bảo", "quantity": 173, "unitPrice": 300, "status": "Chờ xử lý" },
   { "name": "Sơn", "quantity": 175, "unitPrice": 300, "status": "Chờ xử lý" },
   { "name": "Ngọc Chi", "quantity": 350, "unitPrice": 300, "status": "Chờ xử lý" },
-  { "name": "", "quantity": 50, "unitPrice": 300, "status": "Chờ xử lý" },
   { "name": "Súp Bờ Men", "quantity": 91, "unitPrice": 300, "status": "Chờ xử lý" },
   { "name": "Vanhieu", "quantity": 120, "unitPrice": 300, "status": "Chờ xử lý" },
   { "name": "Cơm Nguội", "quantity": 137, "unitPrice": 300, "status": "Chờ xử lý" },
