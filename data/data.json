@@ -227,7 +227,7 @@
         },
         {
             "name": "Súp Bờ Men",
-            "quantity": 110,
+            "quantity": 200,
             "unitPrice": 300,
             "status": "Đã thanh toán"
         },
@@ -246,12 +246,6 @@
         {
             "name": "Vanhieu",
             "quantity": 308,
-            "unitPrice": 300,
-            "status": "Đã thanh toán"
-        },
-        {
-            "name": "Súp Bờ Men",
-            "quantity": 90,
             "unitPrice": 300,
             "status": "Đã thanh toán"
         },
