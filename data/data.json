@@ -507,7 +507,6 @@
     { "name": "Ngọc Chi", "quantity": 424, "unitPrice": 300, "status": "Chờ xử lý" },
     { "name": "Văn Linh", "quantity": 200, "unitPrice": 300, "status": "Chờ xử lý" },
     { "name": "Hello", "quantity": 366, "unitPrice": 300, "status": "Chờ xử lý" },
-    { "name": "Nguyên Cao", "quantity": 51, "unitPrice": 300, "status": "Chờ xử lý" },
     { "name": "Cơm Nguội", "quantity": 35, "unitPrice": 300, "status": "Chờ xử lý" },
     { "name": "Hye Min Seo", "quantity": 225, "unitPrice": 300, "status": "Chờ xử lý" },
     { "name": "Đô Năm Trăm", "quantity": 30, "unitPrice": 300, "status": "Chờ xử lý" },
@@ -518,7 +517,7 @@
     { "name": "Ngọc Diệp", "quantity": 60, "unitPrice": 300, "status": "Chờ xử lý" },
     { "name": "Hiếu Hà", "quantity": 55, "unitPrice": 300, "status": "Chờ xử lý" },
     { "name": "Lz", "quantity": 186, "unitPrice": 300, "status": "Chờ xử lý" },
-    { "name": "Nguyễn Cao", "quantity": 15, "unitPrice": 300, "status": "Chờ xử lý" },
+    { "name": "Nguyễn Cao", "quantity": 66, "unitPrice": 300, "status": "Chờ xử lý" },
     { "name": "Vanhieu", "quantity": 80, "unitPrice": 300, "status": "Chờ xử lý" },
     { "name": "Súp Bờ Men", "quantity": 60, "unitPrice": 300, "status": "Chờ xử lý" },
     { "name": "Chunnn", "quantity": 76, "unitPrice": 300, "status": "Chờ xử lý" }
