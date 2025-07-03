@@ -6,7 +6,9 @@
   {"date": "2025-06-25", "customers": 70, "salary": 60000},
   {"date": "2025-06-26", "customers": 62, "salary": 60000},
   {"date": "2025-06-27", "customers": 45, "salary": 35000},
-    {"date": "2025-06-28", "customers": 61, "salary": 60000},
-    {"date": "2025-06-29", "customers": 71, "salary": 60000},
-    {"date": "2025-06-30", "customers": 107, "salary": 75000}
+  {"date": "2025-06-28", "customers": 61, "salary": 60000},
+  {"date": "2025-06-29", "customers": 71, "salary": 60000},
+  {"date": "2025-06-30", "customers": 107, "salary": 75000},
+  {"date": "2025-07-01", "customers": 94, "salary": 75000},
+  {"date": "2025-07-02", "customers": 103, "salary": 75000}
 ]
