@@ -460,7 +460,7 @@
         },
         {
           "name": "Chunnn",
-          "quantity": 85,
+          "quantity": 155,
           "unitPrice": 300,
           "status": "Đã thanh toán"
         },
@@ -503,12 +503,6 @@
         {
           "name": "Tiger",
           "quantity": 155,
-          "unitPrice": 300,
-          "status": "Đã thanh toán"
-        },
-        {
-          "name": "Chunnn",
-          "quantity": 71,
           "unitPrice": 300,
           "status": "Đã thanh toán"
         }
