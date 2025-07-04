@@ -501,7 +501,7 @@
           "status": "Đã thanh toán"
         }
       ],
-  "04/07/2025": [
+  "03/07/2025": [
     { "name": "Đức Lâm", "quantity": 285, "unitPrice": 300, "status": "Đã thanh toán" },
     { "name": "Ngọc Chi", "quantity": 424, "unitPrice": 300, "status": "Đã thanh toán" },
     { "name": "Văn Linh", "quantity": 200, "unitPrice": 300, "status": "Đã thanh toán" },
@@ -520,5 +520,21 @@
     { "name": "Vanhieu", "quantity": 80, "unitPrice": 300, "status": "Đã thanh toán" },
     { "name": "Súp Bờ Men", "quantity": 60, "unitPrice": 300, "status": "Đã thanh toán" },
     { "name": "Chunnn", "quantity": 76, "unitPrice": 300, "status": "Đã thanh toán" }
+  ],
+  "04/07/2025": [
+    { "name": "Hoàng Nhật", "quantity": 155, "unitPrice": 300, "status": "Đã thanh toán" },
+    { "name": "Đức Lâm", "quantity": 273, "unitPrice": 300, "status": "Đã thanh toán" },
+    { "name": "Bui Huy", "quantity": 192, "unitPrice": 300, "status": "Đã thanh toán" },
+    { "name": "Hye Min Seo", "quantity": 546, "unitPrice": 300, "status": "Đã thanh toán" },
+    { "name": "Gấu", "quantity": 449, "unitPrice": 300, "status": "Đã thanh toán" },
+    { "name": "Nguyễn Cao", "quantity": 47, "unitPrice": 300, "status": "Đã thanh toán" },
+    { "name": "Quang Hòa", "quantity": 115, "unitPrice": 300, "status": "Đã thanh toán" },
+    { "name": "Ngọc Chi", "quantity": 242, "unitPrice": 300, "status": "Đã thanh toán" },
+    { "name": "Hello", "quantity": 322, "unitPrice": 300, "status": "Đã thanh toán" },
+    { "name": "Cơm Nguội", "quantity": 70, "unitPrice": 300, "status": "Đã thanh toán" },
+    { "name": "Ngọc Thái", "quantity": 142, "unitPrice": 300, "status": "Đã thanh toán" },
+    { "name": "Súp Bờ Men", "quantity": 270, "unitPrice": 300, "status": "Đã thanh toán" },
+    { "name": "Hiếu Hà", "quantity": 88, "unitPrice": 300, "status": "Đã thanh toán" },
+    { "name": "Anh Hao", "quantity": 35, "unitPrice": 300, "status": "Đã thanh toán" }
   ]
   }
