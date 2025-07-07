@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Master - Hướng dẫn sử dụng hàm Excel từ cơ bản đến nâng cao</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2a5885;
+            --secondary-color: #4a76a8;
+            --accent-color: #63a4ff;
+            --light-color: #f5f5f5;
+            --dark-color: #333;
+            --success-color: #4caf50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .hero {
+            background: url('excel-hero-bg.jpg') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: white;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #4d8eff;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 1rem;
+        }
+        
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+        
+        .section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        .function-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .category-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+        
+        .category-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .category-header i {
+            font-size: 2rem;
+            margin-right: 1rem;
+        }
+        
+        .category-header h3 {
+            font-size: 1.5rem;
+        }
+        
+        .category-body {
+            padding: 1.5rem;
+        }
+        
+        .category-body ul {
+            list-style: none;
+        }
+        
+        .category-body ul li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .category-body ul li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+        
+        .category-body ul li a {
+            color: var(--dark-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .category-body ul li a:hover {
+            color: var(--accent-color);
+            margin-left: 5px;
+        }
+        
+        .function-detail {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .function-header {
+            border-bottom: 2px solid var(--light-color);
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .function-header h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+        
+        .function-syntax {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-left: 4px solid var(--accent-color);
+            margin: 1.5rem 0;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .example {
+            background-color: #e8f4fd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+        
+        .example-title {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .example-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        .example-table th, .example-table td {
+            border: 1px solid #ddd;
+            padding: 0.5rem;
+            text-align: left;
+        }
+        
+        .example-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .example-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 99;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+            }
+            
+            nav ul li {
+                margin: 0 0.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                display: block;
+                margin-bottom: 1rem;
+                width: 100%;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-file-excel"></i>
+                    <span>Excel Master</span>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Trang chủ</a></li>
+                        <li><a href="#basic">Hàm cơ bản</a></li>
+                        <li><a href="#advanced">Hàm nâng cao</a></li>
+                        <li><a href="#examples">Ví dụ thực tế</a></li>
+                        <li><a href="#contact">Liên hệ</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Làm chủ Excel từ cơ bản đến nâng cao</h1>
+                <p>Hơn 100 hàm Excel được giải thích chi tiết với ví dụ minh họa trực quan, giúp bạn trở thành chuyên gia Excel trong thời gian ngắn nhất.</p>
+                <a href="#basic" class="btn">Bắt đầu học ngay</a>
+                <a href="#examples" class="btn btn-outline">Xem ví dụ thực tế</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="basic">
+        <div class="container">
+            <div class="section-title">
+                <h2>Hàm Excel Cơ Bản</h2>
+            </div>
+            
+            <div class="function-categories">
+                <div class="category-card">
+                    <div class="category-header">
+                        <i class="fas fa-calculator"></i>
+                        <h3>Hàm Toán học</h3>
+                    </div>
+                    <div class="category-body">
+                        <ul>
+                            <li><a href="#sum">SUM - Tính tổng</a></li>
+                            <li><a href="#average">AVERAGE - Tính trung bình</a></li>
+                            <li><a href="#max-min">MAX/MIN - Giá trị lớn nhất/nhỏ nhất</a></li>
+                            <li><a href="#round">ROUND - Làm tròn số</a></li>
+                            <li><a href="#sumif">SUMIF - Tính tổng có điều kiện</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-header">
+                        <i class="fas fa-text-width"></i>
+                        <h3>Hàm Văn bản</h3>
+                    </div>
+                    <div class="category-body">
+                        <ul>
+                            <li><a href="#concat">CONCAT - Nối chuỗi</a></li>
+                            <li><a href="#left-right">LEFT/RIGHT - Lấy ký tự bên trái/phải</a></li>
+                            <li><a href="#len">LEN - Độ dài chuỗi</a></li>
+                            <li><a href="#trim">TRIM - Xóa khoảng trắng thừa</a></li>
+                            <li><a href="#find">FIND - Tìm vị trí ký tự</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-header">
+                        <i class="far fa-calendar-alt"></i>
+                        <h3>Hàm Ngày tháng</h3>
+                    </div>
+                    <div class="category-body">
+                        <ul>
+                            <li><a href="#today">TODAY - Ngày hiện tại</a></li>
+                            <li><a href="#date">DATE - Tạo ngày</a></li>
+                            <li><a href="#datedif">DATEDIF - Tính chênh lệch ngày</a></li>
+                            <li><a href="#eomonth">EOMONTH - Ngày cuối tháng</a></li>
+                            <li><a href="#weekday">WEEKDAY - Thứ trong tuần</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hàm SUM -->
+            <div class="function-detail" id="sum">
+                <div class="function-header">
+                    <h3>Hàm SUM - Tính tổng các giá trị</h3>
+                </div>
+                <p>Hàm SUM là một trong những hàm cơ bản và thường xuyên được sử dụng nhất trong Excel, dùng để tính tổng các giá trị số.</p>
+                
+                <div class="function-syntax">
+                    <strong>Cú pháp:</strong> =SUM(number1, [number2], ...)
+                </div>
+                
+                <p><strong>Giải thích tham số:</strong></p>
+                <ul>
+                    <li><strong>number1</strong>: Giá trị số đầu tiên cần tính tổng (bắt buộc)</li>
+                    <li><strong>number2, ...</strong>: Các giá trị số bổ sung để tính tổng (tùy chọn, tối đa 255 tham số)</li>
+                </ul>
+                
+                <div class="example">
+                    <div class="example-title">Ví dụ:</div>
+                    <p>Tính tổng doanh thu các tháng trong quý 1:</p>
+                    <table class="example-table">
+                        <tr>
+                            <th>Tháng</th>
+                            <th>Doanh thu</th>
+                        </tr>
+                        <tr>
+                            <td>Tháng 1</td>
+                            <td>15,000,000</td>
+                        </tr>
+                        <tr>
+                            <td>Tháng 2</td>
+                            <td>18,500,000</td>
+                        </tr>
+                        <tr>
+                            <td>Tháng 3</td>
+                            <td>22,300,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tổng</strong></td>
+                            <td><strong>=SUM(B2:B4)</strong> → 55,800,000</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="example">
+                    <div class="example-title">Mẹo sử dụng:</div>
+                    <ul>
+                        <li>Có thể chọn cả một vùng dữ liệu: =SUM(A1:A10)</li>
+                        <li>Có thể kết hợp nhiều vùng: =SUM(A1:A10, C1:C5)</li>
+                        <li>Bỏ qua ô chứa văn bản hoặc ô trống</li>
+                        <li>Dùng phím tắt Alt + = để tự động chèn hàm SUM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Hàm AVERAGE -->
+            <div class="function-detail" id="average">
+                <div class="function-header">
+                    <h3>Hàm AVERAGE - Tính giá trị trung bình</h3>
+                </div>
+                <p>Hàm AVERAGE tính trung bình cộng của các giá trị số được cung cấp.</p>
+                
+                <div class="function-syntax">
+                    <strong>Cú pháp:</strong> =AVERAGE(number1, [number2], ...)
+                </div>
+                
+                <div class="example">
+                    <div class="example-title">Ví dụ:</div>
+                    <p>Tính điểm trung bình các môn học của sinh viên:</p>
+                    <table class="example-table">
+                        <tr>
+                            <th>Môn học</th>
+                            <th>Điểm</th>
+                        </tr>
+                        <tr>
+                            <td>Toán</td>
+                            <td>8.5</td>
+                        </tr>
+                        <tr>
+                            <td>Văn</td>
+                            <td>7.0</td>
+                        </tr>
+                        <tr>
+                            <td>Anh</td>
+                            <td>9.0</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Trung bình</strong></td>
+                            <td><strong>=AVERAGE(B2:B4)</strong> → 8.17</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Thêm các hàm cơ bản khác tương tự -->
+        </div>
+    </section>
+
+    <section class="section" id="advanced">
+        <div class="container">
+            <div class="section-title">
+                <h2>Hàm Excel Nâng Cao</h2>
+            </div>
+            
+            <div class="function-categories">
+                <div class="category-card">
+                    <div class="category-header">
+                        <i class="fas fa-search"></i>
+                        <h3>Hàm Tra cứu</h3>
+                    </div>
+                    <div class="category-body">
+                        <ul>
+                            <li><a href="#vlookup">VLOOKUP - Dò tìm dọc</a></li>
+                            <li><a href="#hlookup">HLOOKUP - Dò tìm ngang</a></li>
+                            <li><a href="#index-match">INDEX + MATCH - Tra cứu linh hoạt</a></li>
+                            <li><a href="#xlookup">XLOOKUP - Hàm tra cứu mới</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-header">
+                        <i class="fas fa-brain"></i>
+                        <h3>Hàm Logic</h3>
+                    </div>
+                    <div class="category-body">
+                        <ul>
+                            <li><a href="#if">IF - Điều kiện logic</a></li>
+                            <li><a href="#ifs">IFS - Nhiều điều kiện</a></li>
+                            <li><a href="#switch">SWITCH - Chọn giá trị</a></li>
+                            <li><a href="#and-or">AND/OR - Kết hợp điều kiện</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-header">
+                        <i class="fas fa-database"></i>
+                        <h3>Hàm Mảng</h3>
+                    </div>
+                    <div class="category-body">
+                        <ul>
+                            <li><a href="#filter">FILTER - Lọc dữ liệu</a></li>
+                            <li><a href="#sort">SORT - Sắp xếp</a></li>
+                            <li><a href="#unique">UNIQUE - Lấy giá trị duy nhất</a></li>
+                            <li><a href="#sequence">SEQUENCE - Tạo chuỗi số</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hàm VLOOKUP -->
+            <div class="function-detail" id="vlookup">
+                <div class="function-header">
+                    <h3>Hàm VLOOKUP - Dò tìm theo cột</h3>
+                </div>
+                <p>Hàm VLOOKUP là một trong những hàm quan trọng nhất trong Excel, dùng để tìm kiếm giá trị trong một bảng theo cột và trả về kết quả tương ứng.</p>
+                
+                <div class="function-syntax">
+                    <strong>Cú pháp:</strong> =VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup])
+                </div>
+                
+                <p><strong>Giải thích tham số:</strong></p>
+                <ul>
+                    <li><strong>lookup_value</strong>: Giá trị cần tìm kiếm</li>
+                    <li><strong>table_array</strong>: Bảng chứa dữ liệu cần tìm</li>
+                    <li><strong>col_index_num</strong>: Số thứ tự cột chứa kết quả cần lấy</li>
+                    <li><strong>range_lookup</strong>: Kiểu tìm kiếm (TRUE = tương đối, FALSE = chính xác)</li>
+                </ul>
+                
+                <div class="example">
+                    <div class="example-title">Ví dụ:</div>
+                    <p>Tìm tên sản phẩm dựa trên mã sản phẩm:</p>
+                    <table class="example-table">
+                        <tr>
+                            <th>Mã SP</th>
+                            <th>Tên SP</th>
+                            <th>Giá</th>
+                        </tr>
+                        <tr>
+                            <td>SP001</td>
+                            <td>Laptop Dell</td>
+                            <td>15,000,000</td>
+                        </tr>
+                        <tr>
+                            <td>SP002</td>
+                            <td>iPhone 13</td>
+                            <td>22,000,000</td>
+                        </tr>
+                        <tr>
+                            <td>SP003</td>
+                            <td>Samsung TV</td>
+                            <td>12,500,000</td>
+                        </tr>
+                    </table>
+                    <p>Để tìm tên sản phẩm có mã "SP002":</p>
+                    <p><strong>=VLOOKUP("SP002", A2:C4, 2, FALSE)</strong> → "iPhone 13"</p>
+                </div>
+                
+                <div class="example">
+                    <div class="example-title">Lưu ý quan trọng:</div>
+                    <ul>
+                        <li>Giá trị tìm kiếm phải luôn nằm ở cột đầu tiên của vùng dữ liệu</li>
+                        <li>Nên sử dụng FALSE để tìm kiếm chính xác trong hầu hết trường hợp</li>
+                        <li>Có thể kết hợp với hàm IFERROR để xử lý lỗi khi không tìm thấy</li>
+                        <li>Trong Excel 365, có thể thay thế bằng XLOOKUP mạnh mẽ hơn</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Hàm INDEX + MATCH -->
+            <div class="function-detail" id="index-match">
+                <div class="function-header">
+                    <h3>INDEX + MATCH - Cặp đôi hoàn hảo thay thế VLOOKUP</h3>
+                </div>
+                <p>Sự kết hợp giữa INDEX và MATCH tạo ra một công cụ tra cứu linh hoạt hơn nhiều so với VLOOKUP, có thể tìm kiếm theo cả chiều dọc và ngang, không bị giới hạn bởi vị trí cột.</p>
+                
+                <div class="function-syntax">
+                    <strong>Cú pháp:</strong> =INDEX(range, MATCH(lookup_value, lookup_range, [match_type]))
+                </div>
+                
+                <div class="example">
+                    <div class="example-title">Ví dụ:</div>
+                    <p>Tìm giá sản phẩm dựa trên mã sản phẩm (tương tự ví dụ VLOOKUP nhưng linh hoạt hơn):</p>
+                    <p><strong>=INDEX(C2:C4, MATCH("SP002", A2:A4, 0))</strong> → 22,000,000</p>
+                    <p>Công thức này tìm vị trí của "SP002" trong cột A, sau đó trả về giá trị tương ứng trong cột C.</p>
+                </div>
+                
+                <div class="example">
+                    <div class="example-title">Ưu điểm vượt trội:</div>
+                    <ul>
+                        <li>Có thể tìm kiếm ở bất kỳ cột nào, không chỉ cột đầu tiên</li>
+                        <li>Có thể tìm kiếm từ phải sang trái (VLOOKUP chỉ làm trái sang phải)</li>
+                        <li>Hiệu suất tốt hơn với bảng tính lớn</li>
+                        <li>Không bị ảnh hưởng khi chèn/xóa cột</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Thêm các hàm nâng cao khác tương tự -->
+        </div>
+    </section>
+
+    <section class="section" id="examples">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ví dụ Thực tế</h2>
+            </div>
+            
+            <div class="function-detail">
+                <div class="function-header">
+                    <h3>Quản lý bán hàng</h3>
+                </div>
+                
+                <div class="example">
+                    <div class="example-title">Tính tổng doanh thu theo nhân viên</div>
+                    <p>Sử dụng SUMIF để tính tổng doanh thu của từng nhân viên:</p>
+                    <table class="example-table">
+                        <tr>
+                            <th>Nhân viên</th>
+                            <th>Doanh thu</th>
+                        </tr>
+                        <tr>
+                            <td>Nguyễn Văn A</td>
+                            <td>15,000,000</td>
+                        </tr>
+                        <tr>
+                            <td>Trần Thị B</td>
+                            <td>22,000,000</td>
+                        </tr>
+                        <tr>
+                            <td>Nguyễn Văn A</td>
+                            <td>10,000,000</td>
+                        </tr>
+                        <tr>
+                            <td>Lê Văn C</td>
+                            <td>18,000,000</td>
+                        </tr>
+                    </table>
+                    <p>Để tính tổng doanh thu của "Nguyễn Văn A":</p>
+                    <p><strong>=SUMIF(A2:A5, "Nguyễn Văn A", B2:B5)</strong> → 25,000,000</p>
+                </div>
+                
+                <div class="example">
+                    <div class="example-title">Xếp loại nhân viên theo doanh thu</div>
+                    <p>Sử dụng hàm IF lồng nhau để xếp loại nhân viên:</p>
+                    <table class="example-table">
+                        <tr>
+                            <th>Nhân viên</th>
+                            <th>Doanh thu</th>
+                            <th>Xếp loại</th>
+                        </tr>
+                        <tr>
+                            <td>Nguyễn Văn A</td>
+                            <td>25,000,000</td>
+                            <td>=IF(B2>30,"Xuất sắc",IF(B2>20,"Tốt",IF(B2>10,"Khá","Trung bình")))</td>
+                        </tr>
+                    </table>
+                    <p>Kết quả: "Tốt"</p>
+                </div>
+            </div>
+            
+            <div class="function-detail">
+                <div class="function-header">
+                    <h3>Quản lý kho</h3>
+                </div>
+                
+                <div class="example">
+                    <div class="example-title">Cảnh báo hàng tồn kho</div>
+                    <p>Sử dụng Conditional Formatting kết hợp với hàm IF để cảnh báo khi số lượng tồn dưới mức tối thiểu:</p>
+                    <table class="example-table">
+                        <tr>
+                            <th>Sản phẩm</th>
+                            <th>Tồn kho</th>
+                            <th>Mức tối thiểu</th>
+                            <th>Cảnh báo</th>
+                        </tr>
+                        <tr>
+                            <td>Laptop</td>
+                            <td>15</td>
+                            <td>20</td>
+                            <td>=IF(B2<C2,"Cần nhập hàng","")</td>
+                        </tr>
+                    </table>
+                    <p>Kết quả: "Cần nhập hàng"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Liên hệ</h2>
+            </div>
+            
+            <div class="function-detail">
+                <p>Nếu bạn có bất kỳ câu hỏi nào về các hàm Excel hoặc cần hỗ trợ giải quyết vấn đề cụ thể, vui lòng liên hệ với chúng tôi:</p>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
+                    <div>
+                        <h3 style="margin-bottom: 1rem; color: var(--primary-color);">Thông tin liên hệ</h3>
+                        <p><i class="fas fa-envelope" style="margin-right: 10px;"></i> Email: support@excelmaster.vn</p>
+                        <p><i class="fas fa-phone" style="margin-right: 10px;"></i> Điện thoại: 0900 123 456</p>
+                        <p><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> Địa chỉ: 123 Đường Excel, Quận 1, TP.HCM</p>
+                    </div>
+                    
+                    <div>
+                        <h3 style="margin-bottom: 1rem; color: var(--primary-color);">Gửi tin nhắn</h3>
+                        <form>
+                            <div style="margin-bottom: 1rem;">
+                                <input type="text" placeholder="Họ và tên" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px;">
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <input type="email" placeholder="Email" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px;">
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <textarea placeholder="Nội dung" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px; height: 120px;"></textarea>
+                            </div>
+                            <button type="submit" class="btn">Gửi tin nhắn</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Excel Master</h4>
+                    <p>Trang web hướng dẫn sử dụng Excel từ cơ bản đến nâng cao với các ví dụ thực tế, dễ hiểu.</p>
+                    <div class="social-links" style="margin-top: 1rem;">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Hàm cơ bản</h4>
+                    <ul>
+                        <li><a href="#sum">Hàm SUM</a></li>
+                        <li><a href="#average">Hàm AVERAGE</a></li>
+                        <li><a href="#vlookup">Hàm VLOOKUP</a></li>
+                        <li><a href="#if">Hàm IF</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Hàm nâng cao</h4>
+                    <ul>
+                        <li><a href="#index-match">INDEX + MATCH</a></li>
+                        <li><a href="#xlookup">XLOOKUP</a></li>
+                        <li><a href="#filter">FILTER</a></li>
+                        <li><a href="#sort">SORT</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Tài nguyên</h4>
+                    <ul>
+                        <li><a href="#">Tải template miễn phí</a></li>
+                        <li><a href="#">Ebook Excel</a></li>
+                        <li><a href="#">Khóa học online</a></li>
+                        <li><a href="#">Blog chia sẻ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Excel Master. Tất cả các quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Hiệu ứng back to top
+        window.addEventListener('scroll', function() {
+            var backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        document.getElementById('backToTop').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Hiệu ứng khi cuộn đến các phần
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Hiệu ứng fade in khi cuộn
+        const fadeElements = document.querySelectorAll('.function-detail, .category-card');
+        
+        const fadeInOnScroll = function() {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Khởi tạo
+        fadeElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+        
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('load', fadeInOnScroll);
+    </script>
+</body>
+</html>
