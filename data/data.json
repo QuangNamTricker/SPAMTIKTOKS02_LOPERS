@@ -15,7 +15,7 @@
         { "name": "Ngọc Chi", "quantity": 275, "unitPrice": 300, "status": "Đã thanh toán" },
         { "name": "Ngọc Thái", "quantity": 131, "unitPrice": 300, "status": "Đã thanh toán" },
         { "name": "Thảo Phương", "quantity": 252, "unitPrice": 300, "status": "Đã thanh toán" },
-        { "name": "Thuy Linh", "quantity": 132, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Thuy Linh", "quantity": 132, "unitPrice": 300, "status": "Đã thanh toán" },
         { "name": "Tôm", "quantity": 55, "unitPrice": 300, "status": "Đã thanh toán" }
     ]
 }
