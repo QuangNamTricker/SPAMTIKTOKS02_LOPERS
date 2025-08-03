@@ -23,7 +23,7 @@
             { "name": "Baby Shark", "quantity": 220, "unitPrice": 300, "status": "Đã thanh toán" },
             { "name": "Bùi Huy", "quantity": 105, "unitPrice": 300, "status": "Đã thanh toán" },
             { "name": "Em Lan", "quantity": 147, "unitPrice": 300, "status": "Đã thanh toán" },
-            { "name": "Gấu", "quantity": 290, "unitPrice": 300, "status": "Chờ xử lý" },
+            { "name": "Gấu", "quantity": 290, "unitPrice": 300, "status": "Đã thanh toán" },
             { "name": "Hai Son", "quantity": 163, "unitPrice": 300, "status": "Đã thanh toán" },
             { "name": "Hùng Chollay", "quantity": 274, "unitPrice": 300, "status": "Đã thanh toán" },
             { "name": "Kẹo", "quantity": 70, "unitPrice": 300, "status": "Đã thanh toán" },
