@@ -35,7 +35,7 @@
             { "name": "Ngọc Thái", "quantity": 148, "unitPrice": 300, "status": "Đã thanh toán" },
             { "name": "Súp Bờ Men", "quantity": 75, "unitPrice": 300, "status": "Đã thanh toán" },
             { "name": "Thảo Phương", "quantity": 128, "unitPrice": 300, "status": "Đã thanh toán" },
-            { "name": "Thảo Vy", "quantity": 268, "unitPrice": 300, "status": "Đã thanh toán" },
+            { "name": "Thảo Vyvy", "quantity": 268, "unitPrice": 300, "status": "Đã thanh toán" },
             { "name": "Thuy Linh", "quantity": 90, "unitPrice": 300, "status": "Đã thanh toán" }
         ],
         
@@ -62,7 +62,7 @@
         { "name": "Phương Anhhh", "quantity": 27, "unitPrice": 300, "status": "Đã thanh toán" },
         { "name": "Súp Bờ Men", "quantity": 130, "unitPrice": 300, "status": "Đã thanh toán" },
         { "name": "Thảo Phương", "quantity": 128, "unitPrice": 300, "status": "Đã thanh toán" },
-        { "name": "Thảo VyVy", "quantity": 142, "unitPrice": 300, "status": "Đã thanh toán" },
+        { "name": "Thảo Vyvy", "quantity": 142, "unitPrice": 300, "status": "Đã thanh toán" },
         { "name": "Thùy Linh", "quantity": 261, "unitPrice": 300, "status": "Đã thanh toán" },
         { "name": "TIGER BABY", "quantity": 85, "unitPrice": 300, "status": "Đã thanh toán" }
     ]
