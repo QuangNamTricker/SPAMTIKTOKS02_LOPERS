@@ -55,7 +55,7 @@
         { "name": "Kim Xuân", "quantity": 260, "unitPrice": 300, "status": "Đã thanh toán" },
         { "name": "Lan Hương", "quantity": 140, "unitPrice": 300, "status": "Đã thanh toán" },
         { "name": "Ngọc Anh", "quantity": 287, "unitPrice": 300, "status": "Đã thanh toán" },
-        { "name": "Ngọc Chi", "quantity": 241, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Ngọc Chi", "quantity": 241, "unitPrice": 300, "status": "Đã thanh toán" },
         { "name": "Ngọc Hoài", "quantity": 260, "unitPrice": 300, "status": "Đã thanh toán" },
         { "name": "Ngọc Minh", "quantity": 270, "unitPrice": 300, "status": "Đã thanh toán" },
         { "name": "Ngọc Thái", "quantity": 164, "unitPrice": 300, "status": "Đã thanh toán" },
