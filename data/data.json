@@ -65,7 +65,33 @@
         { "name": "Thảo Vyvy", "quantity": 142, "unitPrice": 300, "status": "Đã thanh toán" },
         { "name": "Thùy Linh", "quantity": 261, "unitPrice": 300, "status": "Đã thanh toán" },
         { "name": "TIGER BABY", "quantity": 85, "unitPrice": 300, "status": "Đã thanh toán" }
+    ],
+    "05/08/2025": [
+        { "name": "Át Cơ", "quantity": 128, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Bảo Ngọc", "quantity": 261, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Em Lan", "quantity": 133, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Hai Son", "quantity": 287, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Himo", "quantity": 277, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Hồng Nhung", "quantity": 205, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Hung Chollay", "quantity": 130, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Hùng Chollay", "quantity": 260, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Kẹo", "quantity": 372, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Kxuan", "quantity": 258, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Mai .ng", "quantity": 130, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Ngọc Anh", "quantity": 390, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Ngọc Chi", "quantity": 184, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Ngọc Hoài", "quantity": 131, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Như Ý", "quantity": 255, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Phương", "quantity": 125, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Phương Anh", "quantity": 130, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Súp Bờ Men", "quantity": 112, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Thảo Minh", "quantity": 130, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Thảo Phương", "quantity": 198, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Thảo Vy", "quantity": 261, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "thuy linh", "quantity": 392, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Trang", "quantity": 220, "unitPrice": 300, "status": "Chờ xử lý" }
     ]
+
 
     
 }
