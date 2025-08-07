@@ -23,7 +23,7 @@
             { "name": "Baby Shark", "quantity": 220, "unitPrice": 300, "status": "Đã thanh toán" },
             { "name": "Bùi Huy", "quantity": 105, "unitPrice": 300, "status": "Đã thanh toán" },
             { "name": "Em Lan", "quantity": 147, "unitPrice": 300, "status": "Đã thanh toán" },
-            { "name": "Gấu", "quantity": 290, "unitPrice": 300, "status": "Chờ xử lý" },
+            { "name": "Gấu", "quantity": 290, "unitPrice": 300, "status": "Đã thanh toán" },
             { "name": "Hai Son", "quantity": 163, "unitPrice": 300, "status": "Đã thanh toán" },
             { "name": "Hùng Chollay", "quantity": 274, "unitPrice": 300, "status": "Đã thanh toán" },
             { "name": "Kẹo", "quantity": 70, "unitPrice": 300, "status": "Đã thanh toán" },
@@ -103,7 +103,7 @@
         { "name": "Himo", "quantity": 138, "unitPrice": 300, "status": "Đã thanh toán" },
         { "name": "Hồng Nhung", "quantity": 133, "unitPrice": 300, "status": "Đã thanh toán" },
         { "name": "Hùng Chollay", "quantity": 132, "unitPrice": 300, "status": "Đã thanh toán" },
-        { "name": "Kaito", "quantity": 35, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Kaito", "quantity": 35, "unitPrice": 300, "status": "Đã thanh toán" },
         { "name": "Kẹo", "quantity": 275, "unitPrice": 300, "status": "Đã thanh toán" },
         { "name": "Khanh Lam", "quantity": 132, "unitPrice": 300, "status": "Đã thanh toán" },
         { "name": "Kxuan", "quantity": 131, "unitPrice": 300, "status": "Đã thanh toán" },
@@ -114,7 +114,7 @@
         { "name": "Thảo Vy", "quantity": 260, "unitPrice": 300, "status": "Đã thanh toán" },
         { "name": "Thuy Linh", "quantity": 261, "unitPrice": 300, "status": "Đã thanh toán" },
         { "name": "Tiger", "quantity": 424, "unitPrice": 300, "status": "Đã thanh toán" },
-        { "name": "Trang", "quantity": 320, "unitPrice": 300, "status": "Chờ xử lý" }
+        { "name": "Trang", "quantity": 320, "unitPrice": 300, "status": "Đã thanh toán" }
     ]
 
 
